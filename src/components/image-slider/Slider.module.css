@@ -1,0 +1,72 @@
+.container {
+  width: 520px;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  position: relative;
+  object-fit: cover;
+}
+.images {
+  display: flex;
+  transition: all 1s;
+}
+.container img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+.container button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 10;
+}
+.right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 10;
+}
+.circles {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: gray;
+  cursor: pointer;
+}
+.circlesContainer {
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  position: absolute;
+  bottom: 10px;
+  left: calc(260px - 110px);
+}
+
+.loading {
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem auto;
+  font-size: 4rem;
+}
+.loading svg {
+  animation: rotates 2s linear infinite;
+}
+@keyframes rotates {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
