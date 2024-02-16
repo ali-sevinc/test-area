@@ -1,0 +1,31 @@
+.container ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+.container ul li {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+}
+.container img {
+  width: 280px;
+  height: 200px;
+}
+
+.container {
+  text-align: center;
+}
+
+.container button {
+  background-color: transparent;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+.container button:hover {
+  text-decoration: underline;
+}

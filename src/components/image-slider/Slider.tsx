@@ -87,6 +87,7 @@ export default function Slider() {
               />
             ))}
           </div>
+
           <button onClick={handleRight} className={styles.right}>
             <HiArrowRightCircle />
           </button>

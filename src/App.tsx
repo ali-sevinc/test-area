@@ -6,6 +6,9 @@ import Star from "./components/start-rating/Star";
 //image slider
 import Slider from "./components/image-slider/Slider";
 
+//Load more item
+import LoadMoreButton from "./components/load-more/LoadMoreButton";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -29,6 +32,9 @@ export default function App() {
 
       {/* Image Slider */}
       {/* <Slider /> */}
+
+      {/* Load more data (kind of lazy load...) */}
+      {/* <LoadMoreButton /> */}
     </div>
   );
 }
