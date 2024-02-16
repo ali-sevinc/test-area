@@ -9,6 +9,9 @@ import Slider from "./components/image-slider/Slider";
 //Load more item
 import LoadMoreButton from "./components/load-more/LoadMoreButton";
 
+//
+import Sidebar from "./components/menu-ccp/Sidebar";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -35,6 +38,9 @@ export default function App() {
 
       {/* Load more data (kind of lazy load...) */}
       {/* <LoadMoreButton /> */}
+
+      {/* Menu via "Compond Components Recipe" */}
+      <Sidebar />
     </div>
   );
 }

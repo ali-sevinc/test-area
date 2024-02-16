@@ -1,0 +1,13 @@
+.aside {
+  height: 100dvh;
+  width: 24rem;
+  background-color: #dcdcdc;
+  display: flex;
+  flex-direction: column;
+  color: #1c1c1c;
+  text-align: center;
+  padding: 0 1rem;
+}
+.aside h1 {
+  font-size: 2.4rem;
+}

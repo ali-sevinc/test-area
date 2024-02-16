@@ -7,3 +7,4 @@
 - Star Rating
 - Image Slider
 - Load More Button
+- Compond Components Recipe Sidebar
