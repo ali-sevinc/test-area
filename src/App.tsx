@@ -12,6 +12,9 @@ import LoadMoreButton from "./components/load-more/LoadMoreButton";
 //
 import Sidebar from "./components/menu-ccp/Sidebar";
 
+//
+import Menu from "./components/menu/Menu";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -40,7 +43,10 @@ export default function App() {
       {/* <LoadMoreButton /> */}
 
       {/* Menu via "Compond Components Recipe" */}
-      <Sidebar />
+      {/* <Sidebar /> */}
+
+      {/* Menu via basic re-usable components */}
+      <Menu />
     </div>
   );
 }
