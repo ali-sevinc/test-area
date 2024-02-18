@@ -8,3 +8,5 @@
 - Image Slider
 - Load More Button
 - Compond Components Recipe Sidebar
+- Sidebar
+- QRcode Generator

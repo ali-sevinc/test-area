@@ -15,6 +15,9 @@ import Sidebar from "./components/menu-ccp/Sidebar";
 //
 import Menu from "./components/menu/Menu";
 
+//
+import QRCodeGenerator from "./components/qrcode/QRCode";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -46,7 +49,10 @@ export default function App() {
       {/* <Sidebar /> */}
 
       {/* Menu via basic re-usable components */}
-      <Menu />
+      {/* <Menu /> */}
+
+      {/* Genarate QRCode  */}
+      <QRCodeGenerator />
     </div>
   );
 }
