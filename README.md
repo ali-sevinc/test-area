@@ -10,3 +10,4 @@
 - Compond Components Recipe Sidebar
 - Sidebar
 - QRcode Generator
+- Theme (dark-light mode)

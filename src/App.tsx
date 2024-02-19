@@ -18,6 +18,9 @@ import Menu from "./components/menu/Menu";
 //
 import QRCodeGenerator from "./components/qrcode/QRCode";
 
+//dark-light mode
+import Theme from "./components/theme-change/Theme";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -52,7 +55,10 @@ export default function App() {
       {/* <Menu /> */}
 
       {/* Genarate QRCode  */}
-      <QRCodeGenerator />
+      {/* <QRCodeGenerator /> */}
+
+      {/* Change color theme */}
+      <Theme />
     </div>
   );
 }
