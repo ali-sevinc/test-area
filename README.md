@@ -11,3 +11,4 @@
 - Sidebar
 - QRcode Generator
 - Theme (dark-light mode)
+- Scroll indicator

@@ -1,0 +1,32 @@
+.scroll {
+  margin: 0 auto;
+  width: full;
+  text-align: center;
+}
+.scroll ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6rem;
+}
+.scroll header {
+  height: 5rem;
+  background-color: wheat;
+  color: #000;
+  width: full;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+}
+.scroll h1 {
+  margin: 0;
+}
+.scroll progress {
+  width: 100vw;
+  border: none;
+  margin: 0;
+  transition: all 0.1s;
+}

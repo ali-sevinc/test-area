@@ -21,6 +21,9 @@ import QRCodeGenerator from "./components/qrcode/QRCode";
 //dark-light mode
 import Theme from "./components/theme-change/Theme";
 
+//scroll tracker
+import ScrollIndicator from "./components/scroll-tracker/ScrollIndicator";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -58,7 +61,10 @@ export default function App() {
       {/* <QRCodeGenerator /> */}
 
       {/* Change color theme */}
-      <Theme />
+      {/* <Theme /> */}
+
+      {/* Scroll Indicator */}
+      <ScrollIndicator />
     </div>
   );
 }
