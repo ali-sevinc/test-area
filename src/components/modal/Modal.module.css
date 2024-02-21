@@ -1,0 +1,21 @@
+.modal {
+  width: 32rem;
+  background-color: #3f3f3f;
+  padding: 1rem;
+  position: relative;
+}
+.modal::backdrop {
+  background-color: #111;
+  opacity: 0.9;
+}
+
+.close {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+}

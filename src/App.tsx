@@ -27,6 +27,9 @@ import ScrollIndicator from "./components/scroll-tracker/ScrollIndicator";
 //tab content
 import TabContent from "./components/tab-contents/TabContent";
 
+//Modal Content
+import ModalContent from "./components/modal/ModalContent";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -70,7 +73,10 @@ export default function App() {
       {/* <ScrollIndicator /> */}
 
       {/* Tab Content */}
-      <TabContent />
+      {/* <TabContent /> */}
+
+      {/* Modal Content */}
+      <ModalContent />
     </div>
   );
 }

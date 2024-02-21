@@ -13,3 +13,4 @@
 - Theme (dark-light mode)
 - Scroll indicator
 - Tab Content
+- Modal Content (with dialog)
