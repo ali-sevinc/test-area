@@ -1,0 +1,11 @@
+.item {
+  width: 8rem;
+  cursor: pointer;
+  padding: 12px;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.selected {
+  background-color: green;
+}

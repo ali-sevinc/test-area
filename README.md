@@ -7,8 +7,9 @@
 - Star Rating
 - Image Slider
 - Load More Button
-- Compond Components Recipe Sidebar
+- Compond Components Pattern Sidebar
 - Sidebar
 - QRcode Generator
 - Theme (dark-light mode)
 - Scroll indicator
+- Tab Content

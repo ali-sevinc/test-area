@@ -24,6 +24,9 @@ import Theme from "./components/theme-change/Theme";
 //scroll tracker
 import ScrollIndicator from "./components/scroll-tracker/ScrollIndicator";
 
+//tab content
+import TabContent from "./components/tab-contents/TabContent";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -64,7 +67,10 @@ export default function App() {
       {/* <Theme /> */}
 
       {/* Scroll Indicator */}
-      <ScrollIndicator />
+      {/* <ScrollIndicator /> */}
+
+      {/* Tab Content */}
+      <TabContent />
     </div>
   );
 }
