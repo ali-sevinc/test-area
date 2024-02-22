@@ -30,6 +30,9 @@ import TabContent from "./components/tab-contents/TabContent";
 //Modal Content
 import ModalContent from "./components/modal/ModalContent";
 
+//input autocomplate
+import SearchAutoComplete from "./components/search-autocomplete/SearchAutoComplete";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -76,7 +79,10 @@ export default function App() {
       {/* <TabContent /> */}
 
       {/* Modal Content */}
-      <ModalContent />
+      {/* <ModalContent /> */}
+
+      {/* Search AutoComplate */}
+      <SearchAutoComplete />
     </div>
   );
 }
