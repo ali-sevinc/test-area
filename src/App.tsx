@@ -36,6 +36,10 @@ import SearchAutoComplete from "./components/search-autocomplete/SearchAutoCompl
 //filtering
 import CountriesPage from "./components/country-filter/CountryFilter";
 
+//tic tac toe game
+import TicTacToe from "./components/tic-tac-toe/TicTacToe";
+import TicToc from "./components/tic-tac-toe/TicTacv2";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -88,7 +92,11 @@ export default function App() {
       {/*<SearchAutoComplete />*/}
 
       {/* country filter. */}
-      {<CountriesPage />}
+      {/* {<CountriesPage />} */}
+
+      {/* TicTacToe */}
+      {/* <TicToc /> */}
+      <TicTacToe />
     </div>
   );
 }
