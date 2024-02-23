@@ -33,6 +33,9 @@ import ModalContent from "./components/modal/ModalContent";
 //input autocomplate
 import SearchAutoComplete from "./components/search-autocomplete/SearchAutoComplete";
 
+//filtering
+import CountriesPage from "./components/country-filter/CountryFilter";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -82,7 +85,10 @@ export default function App() {
       {/* <ModalContent /> */}
 
       {/* Search AutoComplate */}
-      <SearchAutoComplete />
+      {/*<SearchAutoComplete />*/}
+
+      {/* country filter. */}
+      {<CountriesPage />}
     </div>
   );
 }
