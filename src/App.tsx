@@ -40,6 +40,10 @@ import CountriesPage from "./components/country-filter/CountryFilter";
 import TicTacToe from "./components/tic-tac-toe/TicTacToe";
 import TicToc from "./components/tic-tac-toe/TicTacv2";
 
+//feature context
+import FeatureFlags from "./components/feature-flag/FeatureFlags";
+import FeatureFlagsProvider from "./components/feature-flag/FeatureContext";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -96,7 +100,12 @@ export default function App() {
 
       {/* TicTacToe */}
       {/* <TicToc /> */}
-      <TicTacToe />
+      {/* <TicTacToe /> */}
+
+      {/* Feature Flags */}
+      <FeatureFlagsProvider>
+        <FeatureFlags />
+      </FeatureFlagsProvider>
     </div>
   );
 }
