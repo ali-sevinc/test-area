@@ -1,6 +1,6 @@
 # The Test Area
 
-## Demonstrations of Demo-React-Apps
+## Demonstrations of Basic-React-Apps
 
 ### Apps
 
