@@ -44,6 +44,9 @@ import TicToc from "./components/tic-tac-toe/TicTacv2";
 import FeatureFlags from "./components/feature-flag/FeatureFlags";
 import FeatureFlagsProvider from "./components/feature-flag/FeatureContext";
 
+//useOutside custom hook
+import OutsideClick from "./components/outside-click/OutsideClick";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -103,9 +106,12 @@ export default function App() {
       {/* <TicTacToe /> */}
 
       {/* Feature Flags */}
-      <FeatureFlagsProvider>
+      {/* <FeatureFlagsProvider>
         <FeatureFlags />
-      </FeatureFlagsProvider>
+      </FeatureFlagsProvider> */}
+
+      {/* Outside Click */}
+      <OutsideClick />
     </div>
   );
 }

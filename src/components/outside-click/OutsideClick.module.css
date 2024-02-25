@@ -1,0 +1,14 @@
+.container {
+  width: 24rem;
+  height: 12rem;
+  margin: 2rem auto;
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.button {
+  color: #111;
+  margin: 4rem auto;
+  display: block;
+  cursor: pointer;
+}
