@@ -1,0 +1,16 @@
+.container {
+  width: 24rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.container ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.container button {
+  color: #1f1f1f;
+}

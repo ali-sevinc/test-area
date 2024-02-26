@@ -16,6 +16,7 @@ export default function OutsideClick() {
       {showContent && (
         <div className={styles.container} ref={ref}>
           <h2>Outside Click Custom Hook</h2>
+          <p>Click outside to close the box.</p>
         </div>
       )}
       {!showContent && (

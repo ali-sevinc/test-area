@@ -47,6 +47,9 @@ import FeatureFlagsProvider from "./components/feature-flag/FeatureContext";
 //useOutside custom hook
 import OutsideClick from "./components/outside-click/OutsideClick";
 
+//click to scroll
+import ClickToScrtoll from "./components/click-scroll-top-bottom/ClickToScrtoll";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -111,7 +114,10 @@ export default function App() {
       </FeatureFlagsProvider> */}
 
       {/* Outside Click */}
-      <OutsideClick />
+      {/* <OutsideClick /> */}
+
+      {/* Click Scroll to top/bottom */}
+      <ClickToScrtoll />
     </div>
   );
 }

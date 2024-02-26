@@ -19,3 +19,4 @@
 - Tic Tac Toe
 - Feature Flags
 - Outside Click Custom Hook
+- Click Scroll to Bottom/Top
