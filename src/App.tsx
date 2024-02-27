@@ -50,6 +50,9 @@ import OutsideClick from "./components/outside-click/OutsideClick";
 //click to scroll
 import ClickToScrtoll from "./components/click-scroll-top-bottom/ClickToScrtoll";
 
+//weather api
+import Weather from "./components/wether/Weather";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -117,7 +120,10 @@ export default function App() {
       {/* <OutsideClick /> */}
 
       {/* Click Scroll to top/bottom */}
-      <ClickToScrtoll />
+      {/*<ClickToScrtoll />*/}
+
+      {/* City Weather searching. */}
+      <Weather />
     </div>
   );
 }

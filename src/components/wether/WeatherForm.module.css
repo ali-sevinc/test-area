@@ -1,0 +1,41 @@
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.inputs p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.inputs input {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+.inputs label {
+  font-size: 1.2rem;
+  color: #fff;
+}
+.inputs button {
+  display: block;
+  color: #1f1f1f;
+  padding: 4px 8px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.inputs button:hover {
+  background-color: #9f9f9f;
+}
+.inputs button:disabled {
+  background-color: #999696;
+  outline: none;
+  border: none;
+  cursor: not-allowed;
+}
