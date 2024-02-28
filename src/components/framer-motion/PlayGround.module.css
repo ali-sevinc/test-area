@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(213, 237, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #3f4f5f;
+  border: 14px solid #0c1b29;
+  border-left: 14px solid rgb(213, 237, 229);
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1.4rem;
+}
+.inputGroup input {
+  width: 18rem;
+  padding: 8px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+}
+
+.modalItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 1.2rem;
+}
+.modalItem h2 {
+  font-size: 1.4rem;
+}
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: end;
+  align-items: center;
+}
+
+.modalItem .modalActions button {
+  background-color: #4f4f4f;
+  cursor: pointer;
+}
+
+.container button {
+  background-color: #4f4f4f;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}

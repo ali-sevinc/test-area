@@ -1,0 +1,11 @@
+.modal {
+  width: 32rem;
+  background-color: #2f3f4f;
+  color: #fff;
+}
+.modal button {
+  color: #fff;
+}
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}

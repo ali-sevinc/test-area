@@ -53,6 +53,9 @@ import ClickToScrtoll from "./components/click-scroll-top-bottom/ClickToScrtoll"
 //weather api
 import Weather from "./components/wether/Weather";
 
+//framer-motion
+import PlayGround from "./components/framer-motion/PlayGround";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -123,7 +126,10 @@ export default function App() {
       {/*<ClickToScrtoll />*/}
 
       {/* City Weather searching. */}
-      <Weather />
+      {/* <Weather /> */}
+
+      {/* Framer-motion-playground */}
+      <PlayGround />
     </div>
   );
 }
