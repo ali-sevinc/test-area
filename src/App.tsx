@@ -56,6 +56,9 @@ import Weather from "./components/wether/Weather";
 //framer-motion
 import PlayGround from "./components/framer-motion/PlayGround";
 
+//text expander
+import TextExpander from "./components/text-expander/TextExpander";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -129,7 +132,10 @@ export default function App() {
       {/* <Weather /> */}
 
       {/* Framer-motion-playground */}
-      <PlayGround />
+      {/* <PlayGround /> */}
+
+      {/* Text Expander */}
+      <TextExpander />
     </div>
   );
 }

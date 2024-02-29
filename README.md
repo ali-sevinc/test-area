@@ -22,3 +22,4 @@
 - Click Scroll to Bottom/Top
 - City Weather
 - Framer Motion Example
+- Text Expander
