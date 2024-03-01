@@ -59,6 +59,11 @@ import PlayGround from "./components/framer-motion/PlayGround";
 //text expander
 import TextExpander from "./components/text-expander/TextExpander";
 
+//shop/redux-toolkit
+import Layout from "./components/shop-test/layout/Layout";
+import { Provider } from "react-redux";
+import { store } from "./components/shop-test/store/store";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -135,7 +140,12 @@ export default function App() {
       {/* <PlayGround /> */}
 
       {/* Text Expander */}
-      <TextExpander />
+      {/* <TextExpander /> */}
+
+      {/* Shop */}
+      <Provider store={store}>
+        <Layout />
+      </Provider>
     </div>
   );
 }

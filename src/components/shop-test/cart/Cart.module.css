@@ -1,0 +1,62 @@
+.cart {
+  padding: 1rem;
+}
+
+.cart h2 {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 600;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.actions button {
+  width: 6rem;
+  padding: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #cfcfcf;
+  color: #000;
+  transition: background-color 0.2s;
+}
+.actions button:hover {
+  background-color: #9f9f9f;
+}
+
+.items {
+  list-style: none;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid black;
+  max-height: 12rem;
+  margin: 1rem 0;
+  overflow-y: scroll;
+}
+
+.totalAmount {
+  text-align: end;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.totalAmount span {
+  font-weight: 600;
+}
+
+.cart .items::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 4px;
+}
+
+.cart .items::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+.cart .items::-webkit-scrollbar-thumb {
+  background-color: rgb(52, 50, 50);
+}

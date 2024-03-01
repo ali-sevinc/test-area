@@ -1,0 +1,7 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 1rem;
+  list-style: none;
+}

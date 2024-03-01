@@ -1,0 +1,25 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 8px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1.2rem;
+}
+.actions button {
+  font-size: 1rem;
+  background-color: #cfcfcf;
+  padding: 4px;
+  width: 32px;
+  color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.actions button:hover {
+  background-color: #9f9f9f;
+}

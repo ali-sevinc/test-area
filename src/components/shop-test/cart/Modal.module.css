@@ -1,0 +1,16 @@
+.modal {
+  width: 32rem;
+  background-color: #1f2f3f;
+  color: #fff;
+  /* border: 1px solid #fff; */
+}
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal .close {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  cursor: pointer;
+}
