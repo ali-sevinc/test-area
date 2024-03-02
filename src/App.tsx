@@ -64,6 +64,10 @@ import Layout from "./components/shop-test/layout/Layout";
 import { Provider } from "react-redux";
 import { store } from "./components/shop-test/store/store";
 
+//React patterns
+import CCPContentTest from "./components/patterns/CCPContentTest";
+import RenderPropsTest from "./components/patterns/RenderPropsTest";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -143,9 +147,15 @@ export default function App() {
       {/* <TextExpander /> */}
 
       {/* Shop */}
-      <Provider store={store}>
+      {/*<Provider store={store}>
         <Layout />
-      </Provider>
+    </Provider>*/}
+
+      {/* React Pattenrs */}
+      {/* Compound Components Pattern */}
+      <CCPContentTest />
+      {/* Render Props Pattern & Debouncing */}
+      <RenderPropsTest />
     </div>
   );
 }

@@ -24,3 +24,4 @@
 - Framer Motion Example
 - Text Expander & tailwindcss setup
 - Demo Shop & Redux/Toolkit
+- React Patterns (ccp-rp-db)
