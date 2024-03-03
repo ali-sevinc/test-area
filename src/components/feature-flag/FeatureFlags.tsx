@@ -1,10 +1,10 @@
 import Menus from "../menu-ccp/Menus";
-import { useFeatureContext } from "./FeatureContext";
+import FeatureFlagsProvider, { useFeatureContext } from "./FeatureContext";
 import QRCodeGenerator from "../qrcode/QRCode";
 import Theme from "../theme-change/Theme";
 import TicTacToe from "../tic-tac-toe/TicTacToe";
 
-export default function FeatureFlags() {
+function Flags() {
   const { showCCPMenu, showQrcode, showTheme, showTicTacToe } =
     useFeatureContext();
 
@@ -59,5 +59,12 @@ export default function FeatureFlags() {
         </>
       )}
     </div>
+  );
+}
+export default function FeatureFlags() {
+  return (
+    <FeatureFlagsProvider>
+      <Flags />
+    </FeatureFlagsProvider>
   );
 }

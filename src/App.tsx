@@ -42,7 +42,6 @@ import TicToc from "./components/tic-tac-toe/TicTacv2";
 
 //feature context
 import FeatureFlags from "./components/feature-flag/FeatureFlags";
-import FeatureFlagsProvider from "./components/feature-flag/FeatureContext";
 
 //useOutside custom hook
 import OutsideClick from "./components/outside-click/OutsideClick";
@@ -61,8 +60,6 @@ import TextExpander from "./components/text-expander/TextExpander";
 
 //shop/redux-toolkit
 import Layout from "./components/shop-test/layout/Layout";
-import { Provider } from "react-redux";
-import { store } from "./components/shop-test/store/store";
 
 //React patterns
 import CCPContentTest from "./components/patterns/CCPContentTest";
@@ -130,9 +127,7 @@ export default function App() {
       {/* <TicTacToe /> */}
 
       {/* Feature Flags */}
-      {/* <FeatureFlagsProvider>
-        <FeatureFlags />
-      </FeatureFlagsProvider> */}
+      {/* <FeatureFlags /> */}
 
       {/* Outside Click */}
       {/* <OutsideClick /> */}
@@ -150,9 +145,7 @@ export default function App() {
       {/* <TextExpander /> */}
 
       {/* Shop */}
-      {/*<Provider store={store}>
-        <Layout />
-    </Provider>*/}
+      {/* <Layout /> */}
 
       {/* React Pattenrs */}
       {/* Compound Components Pattern */}
