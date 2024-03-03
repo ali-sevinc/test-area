@@ -68,6 +68,9 @@ import { store } from "./components/shop-test/store/store";
 import CCPContentTest from "./components/patterns/CCPContentTest";
 import RenderPropsTest from "./components/patterns/RenderPropsTest";
 
+//contextAPI
+import ContextTest from "./components/context-api/ContextTest";
+
 export default function App() {
   /*
   function capitilizeOther(value: string) {
@@ -153,9 +156,12 @@ export default function App() {
 
       {/* React Pattenrs */}
       {/* Compound Components Pattern */}
-      <CCPContentTest />
+      {/* <CCPContentTest /> */}
       {/* Render Props Pattern & Debouncing */}
-      <RenderPropsTest />
+      {/* <RenderPropsTest /> */}
+
+      {/* Context-Api */}
+      <ContextTest />
     </div>
   );
 }

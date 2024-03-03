@@ -1,0 +1,45 @@
+.product-item h2 {
+  font-size: 1.15rem;
+  margin: 0.25rem 0;
+}
+
+.product-item h2.is-fav {
+  color: #ff2058;
+}
+
+.product-item p {
+  margin: 0.25rem 0;
+}
+
+.ctxbutton {
+  font: inherit;
+  background: #ff2058;
+  padding: 0.5rem 2rem;
+  color: white;
+  border: 1px solid #ff2058;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ctxbutton:hover,
+.ctxbutton:active {
+  background: white;
+  color: #ff2058;
+}
+
+.ctxbutton:focus {
+  outline: none;
+}
+
+.ctxbutton.button-outline {
+  background: white;
+  color: #ff2058;
+}
+
+.ctxbutton.button-outline:hover,
+.ctxbutton.button-outline:active {
+  background: #ff2058;
+  color: white;
+  box-shadow: none;
+}
