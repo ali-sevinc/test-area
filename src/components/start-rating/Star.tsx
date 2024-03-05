@@ -7,7 +7,7 @@ type PropsType = {
   color?: string;
   defaultRating?: number;
   sizes?: number;
-  onGetValue: (value: number) => void;
+  onGetValue?: (value: number) => void;
 };
 export default function Star({
   starsNum = 10,
@@ -20,7 +20,7 @@ export default function Star({
   const [rating, setRating] = useState<number>(defaultRating);
   function handleRating(value: number) {
     setRating(value);
-    onGetValue(value);
+    onGetValue?.(value);
   }
   const arr = Array.from({ length: starsNum }, (_, i) => i + 1);
 
@@ -47,13 +47,8 @@ export default function Star({
           />
         ))}
       </div>
-      {/* {hoveredStars > 0 ? (
-        <span style={{ fontSize: `${sizes}px` }}>{hoveredStars}</span>
-      ) : rating > 0 ? (
-        <span style={{ fontSize: `${sizes}px` }}>{rating}</span>
-      ) : null} */}
 
-      <p style={{ fontSize: `${sizes}px` }}>{ratingNum}</p>
+      <p style={{ fontSize: `${sizes - 8}px` }}>{ratingNum}</p>
     </div>
   );
 }

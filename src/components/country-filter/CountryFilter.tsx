@@ -24,12 +24,13 @@ export default function CountriesPage() {
   } = useCountries(filtered);
 
   return (
-    <>
+    <div className="flex min-h-screen flex-col items-center gap-8 bg-stone-600 py-8 text-stone-50">
       <div>
         <label htmlFor="filter-country">Filter by Capital: </label>
         <select
           id="filter-country"
           defaultValue={filtered}
+          className="text-stone-800"
           onChange={(e) => {
             setCountry(null);
             setFiltered(e.target.value);
@@ -66,7 +67,7 @@ export default function CountriesPage() {
             ))}
           </ul>
         )}
-    </>
+    </div>
   );
 }
 
@@ -104,7 +105,7 @@ function useCountries(filtered: string) {
       }
       fetchCountries();
     },
-    [filtered]
+    [filtered],
   );
 
   // console.log(countries);

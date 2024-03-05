@@ -1,9 +1,19 @@
 .container ul {
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
 }
+
+.container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2rem 0;
+}
+
 .container ul li {
   width: 280px;
   height: 280px;
@@ -16,6 +26,8 @@
 
 .container {
   text-align: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .container button {

@@ -9,15 +9,16 @@ export default function Navigation() {
         <ul>
           <li>
             <NavLink
-              to="/"
+              to="/context-api"
               className={({ isActive }) => (isActive ? styles.active : "")}
+              end
             >
               All Products
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/favorites"
+              to="/context-api/favorites"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
               Favorites

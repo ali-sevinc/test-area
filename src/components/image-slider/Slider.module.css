@@ -6,6 +6,7 @@
   border-radius: 8px;
   position: relative;
   object-fit: cover;
+  margin: 8rem auto;
 }
 .images {
   display: flex;

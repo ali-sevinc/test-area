@@ -24,7 +24,10 @@
 }
 
 .reset {
-  background-color: #f1f1f1;
+  background-color: #4f4f4f;
+  padding: 4px 8px;
+  color: #fff;
+  margin-top: 1rem;
 }
 
 .container p {

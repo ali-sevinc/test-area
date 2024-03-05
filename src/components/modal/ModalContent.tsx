@@ -25,9 +25,11 @@ export default function ModalContent() {
         </div>
       </Modal>
 
-      <button className={styles.button} onClick={handleShowModal}>
-        Show Modal
-      </button>
+      <div className={styles.container}>
+        <button className={styles.button} onClick={handleShowModal}>
+          Show Modal
+        </button>
+      </div>
     </>
   );
 }

@@ -20,7 +20,7 @@ export default function WeatherItem({
         </p>
       )}
       <p>
-        <span>Tempeture: </span>
+        <span>Temperature: </span>
         <span>{temperature}</span>
       </p>
       <p>

@@ -1,5 +1,21 @@
-.content,
-.button {
+.container {
+  min-height: 100vh;
+  background-color: #1c1c1c;
+  text-align: center;
+  padding-top: 8rem;
+}
+.button,
+.content button {
   color: #fff;
   color-scheme: light dark;
+  background: #000;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: #fff;
 }

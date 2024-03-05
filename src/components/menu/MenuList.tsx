@@ -3,7 +3,7 @@ import { ItemType } from "./data";
 
 export default function MenuList({ item }: { item: ItemType }) {
   return (
-    <li>
+    <li className="pl-8">
       <MenuItem item={item} />
     </li>
   );

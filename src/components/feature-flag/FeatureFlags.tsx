@@ -20,7 +20,6 @@ function Flags() {
     >
       {showCCPMenu && (
         <>
-          <h2>CCP MENU</h2>
           <Menus>
             <Menus.Toggle id="featured-1">Open Menu 1</Menus.Toggle>
             <Menus.Menu id="featured-1">
@@ -47,14 +46,12 @@ function Flags() {
 
       {showTheme && (
         <>
-          <h2>Theme</h2>
           <Theme />
         </>
       )}
 
       {showTicTacToe && (
         <>
-          <h2>Tic Tac Toe</h2>
           <TicTacToe />
         </>
       )}

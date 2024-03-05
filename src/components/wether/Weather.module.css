@@ -1,5 +1,5 @@
 .container {
-  width: 32rem;
+  width: 36rem;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -15,6 +15,7 @@
   gap: 8px;
   color: #fff;
   text-align: center;
+  margin-top: 1rem;
 }
 .forecast p,
 .forecast ul,
