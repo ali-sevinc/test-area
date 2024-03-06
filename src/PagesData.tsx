@@ -6,6 +6,7 @@ import {
   HiOutlineDownload,
   HiOutlineMenu,
   HiOutlineMenuAlt4,
+  HiOutlinePaperAirplane,
   HiOutlineSearch,
   HiOutlineTable,
 } from "react-icons/hi";
@@ -87,4 +88,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   },
   { id: "render-props", text: "Render Props", icon: <HiOutlineCircleStack /> },
   { id: "context-api", text: "Context API", icon: <HiOutlineCommandLine /> },
+  { id: "pagination", text: "Pagination", icon: <HiOutlinePaperAirplane /> },
 ];

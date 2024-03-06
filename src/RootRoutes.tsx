@@ -25,12 +25,13 @@ import TextExpander from "./components/text-expander/TextExpander";
 import ShopLayout from "./components/shop-demo/layout/Layout";
 import CCPContentTest from "./components/patterns/CCPContentTest";
 import RenderPropsTest from "./components/patterns/RenderPropsTest";
-
+////
 import ContextLayout from "./components/context-api/ContextLayout";
 import ProductProvider from "./components/context-api/context/ProductContext";
 import ProductsPage from "./components/context-api/containers/Products";
 import FavoritesPage from "./components/context-api/containers/Favorites";
-
+////
+import PaginationTest from "./components/pagination/PaginationTest";
 //*** */
 
 const router = createBrowserRouter([
@@ -65,6 +66,7 @@ const router = createBrowserRouter([
       { path: "/context-api/favorites", element: <FavoritesPage /> },
     ],
   },
+  { path: "/pagination", element: <PaginationTest /> },
 ]);
 
 export default function RootRoutes() {

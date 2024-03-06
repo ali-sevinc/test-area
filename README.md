@@ -26,3 +26,4 @@
 - Demo Shop & Redux/Toolkit
 - React Patterns (ccp-rp-db)
 - ContextAPI
+- Pagination Demo

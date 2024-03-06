@@ -3,7 +3,7 @@ import { PAGES } from "./PagesData";
 
 export default function HomePage() {
   return (
-    <div className="h-screen bg-zinc-700 text-zinc-50">
+    <div className="min-h-screen bg-zinc-700 pb-12 text-zinc-50">
       <h1 className="border-b py-4 text-center text-4xl font-bold">
         Test Area Demo Apps
       </h1>
