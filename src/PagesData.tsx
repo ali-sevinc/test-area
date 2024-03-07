@@ -23,6 +23,7 @@ import {
   HiOutlineMoon,
   HiOutlinePlay,
   HiOutlineQrCode,
+  HiOutlineQuestionMarkCircle,
   HiOutlineShoppingCart,
   HiOutlineStar,
 } from "react-icons/hi2";
@@ -89,4 +90,9 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   { id: "render-props", text: "Render Props", icon: <HiOutlineCircleStack /> },
   { id: "context-api", text: "Context API", icon: <HiOutlineCommandLine /> },
   { id: "pagination", text: "Pagination", icon: <HiOutlinePaperAirplane /> },
+  {
+    id: "react-testing",
+    text: "React Test",
+    icon: <HiOutlineQuestionMarkCircle />,
+  },
 ];

@@ -32,6 +32,7 @@ import ProductsPage from "./components/context-api/containers/Products";
 import FavoritesPage from "./components/context-api/containers/Favorites";
 ////
 import PaginationTest from "./components/pagination/PaginationTest";
+import Testing from "./components/testing";
 //*** */
 
 const router = createBrowserRouter([
@@ -67,6 +68,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "/pagination", element: <PaginationTest /> },
+  { path: "/react-testing", element: <Testing /> },
 ]);
 
 export default function RootRoutes() {
