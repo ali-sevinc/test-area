@@ -17,6 +17,7 @@ import {
   HiOutlineCircleStack,
   HiOutlineCloud,
   HiOutlineCommandLine,
+  HiOutlineDocumentArrowDown,
   HiOutlineDocumentText,
   HiOutlineFlag,
   HiOutlineGift,
@@ -95,4 +96,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     text: "React Test",
     icon: <HiOutlineQuestionMarkCircle />,
   },
+  { id: "recipes", text: "Recipes", icon: <HiOutlineDocumentArrowDown /> },
 ];

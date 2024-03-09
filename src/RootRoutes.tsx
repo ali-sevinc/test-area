@@ -35,6 +35,21 @@ import PaginationTest from "./components/pagination/PaginationTest";
 import Testing from "./components/testing";
 //*** */
 
+///
+import Recipes, {
+  loader as recipeLoader,
+} from "./components/recipe/pages/Recipes";
+import Home from "./components/recipe/pages/Home";
+import Details, {
+  loader as detailLoader,
+} from "./components/recipe/pages/Details";
+import Favorites from "./components/recipe/pages/Favorites";
+import RootPage from "./components/recipe/pages/RootPage";
+import About from "./components/recipe/pages/About";
+import SearchProvider from "./components/recipe/SearchContext";
+import UIProvider from "./components/recipe/uiContext";
+///
+
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
   { path: "/star-rating", element: <Star /> },
@@ -69,12 +84,31 @@ const router = createBrowserRouter([
   },
   { path: "/pagination", element: <PaginationTest /> },
   { path: "/react-testing", element: <Testing /> },
+  {
+    path: "/recipes",
+    element: <RootPage />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "/recipes/recipes", element: <Recipes />, loader: recipeLoader },
+      {
+        path: "/recipes/recipes/:id",
+        element: <Details />,
+        loader: detailLoader,
+      },
+      { path: "/recipes/favorites", element: <Favorites /> },
+      { path: "/recipes/about", element: <About /> },
+    ],
+  },
 ]);
 
 export default function RootRoutes() {
   return (
-    <ProductProvider>
-      <RouterProvider router={router} />
-    </ProductProvider>
+    <SearchProvider>
+      <UIProvider>
+        <ProductProvider>
+          <RouterProvider router={router} />
+        </ProductProvider>
+      </UIProvider>
+    </SearchProvider>
   );
 }
