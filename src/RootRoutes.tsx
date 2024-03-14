@@ -48,6 +48,7 @@ import RootPage from "./components/recipe/pages/RootPage";
 import About from "./components/recipe/pages/About";
 import SearchProvider from "./components/recipe/SearchContext";
 import UIProvider from "./components/recipe/uiContext";
+import NoteApp from "./components/note-tracker/NoteApp";
 ///
 
 const router = createBrowserRouter([
@@ -99,6 +100,7 @@ const router = createBrowserRouter([
       { path: "/recipes/about", element: <About /> },
     ],
   },
+  { path: "/drag-drop-notes", element: <NoteApp /> },
 ]);
 
 export default function RootRoutes() {

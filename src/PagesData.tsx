@@ -19,6 +19,7 @@ import {
   HiOutlineCommandLine,
   HiOutlineDocumentArrowDown,
   HiOutlineDocumentText,
+  HiOutlineEyeDropper,
   HiOutlineFlag,
   HiOutlineGift,
   HiOutlineMoon,
@@ -97,4 +98,9 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     icon: <HiOutlineQuestionMarkCircle />,
   },
   { id: "recipes", text: "Recipes", icon: <HiOutlineDocumentArrowDown /> },
+  {
+    id: "drag-drop-notes",
+    text: "Drag Drop Notes",
+    icon: <HiOutlineEyeDropper />,
+  },
 ];
