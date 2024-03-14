@@ -29,3 +29,4 @@
 - Pagination Demo
 - React-Testing
 - Recipify
+- Noteflix
