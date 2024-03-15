@@ -49,6 +49,7 @@ import About from "./components/recipe/pages/About";
 import SearchProvider from "./components/recipe/SearchContext";
 import UIProvider from "./components/recipe/uiContext";
 import NoteApp from "./components/note-tracker/NoteApp";
+import Dice from "./components/dice-roll/Dice";
 ///
 
 const router = createBrowserRouter([
@@ -101,6 +102,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "/drag-drop-notes", element: <NoteApp /> },
+  { path: "/roll-dice", element: <Dice /> },
 ]);
 
 export default function RootRoutes() {

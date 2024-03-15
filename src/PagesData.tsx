@@ -19,6 +19,7 @@ import {
   HiOutlineCommandLine,
   HiOutlineDocumentArrowDown,
   HiOutlineDocumentText,
+  HiOutlineExclamationCircle,
   HiOutlineEyeDropper,
   HiOutlineFlag,
   HiOutlineGift,
@@ -103,4 +104,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     text: "Drag Drop Notes",
     icon: <HiOutlineEyeDropper />,
   },
+  { id: "roll-dice", text: "Roll Dice", icon: <HiOutlineExclamationCircle /> },
 ];
