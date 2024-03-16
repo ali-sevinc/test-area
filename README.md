@@ -31,3 +31,4 @@
 - Recipify
 - Noteflix
 - Dice Roll
+- Steps Menu

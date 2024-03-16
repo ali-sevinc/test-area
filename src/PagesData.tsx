@@ -5,6 +5,7 @@ import {
   HiOutlineCursorClick,
   HiOutlineDownload,
   HiOutlineMenu,
+  HiOutlineMenuAlt2,
   HiOutlineMenuAlt4,
   HiOutlinePaperAirplane,
   HiOutlineSearch,
@@ -105,4 +106,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     icon: <HiOutlineEyeDropper />,
   },
   { id: "roll-dice", text: "Roll Dice", icon: <HiOutlineExclamationCircle /> },
+  { id: "steps-menu", text: "Step Menu", icon: <HiOutlineMenuAlt2 /> },
 ];
