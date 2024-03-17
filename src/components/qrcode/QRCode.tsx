@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import QRCode from "react-qr-code";
 export default function QRCodeGenerator() {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>("enter a value");
   const inputRef = useRef<HTMLInputElement>(null);
 
   function handleGenarate() {
@@ -13,28 +13,24 @@ export default function QRCodeGenerator() {
   }
 
   return (
-    <div
-      style={{
-        margin: "1rem auto",
-        width: "400px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "8px",
-      }}
-    >
+    <div className="mx-auto mt-12 flex w-96 flex-col items-center gap-2 rounded-xl bg-blue-500 p-8  ">
       <div>
-        <label>Enter Value</label>
-        <input ref={inputRef} />
-        <button onClick={handleGenarate}>Genarate</button>
+        <QRCode value={value} className="w-full" viewBox={`0 0 256 256`} />
       </div>
-      <div style={{ width: "256px" }}>
-        <QRCode
-          size={256}
-          style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-          value={value}
-          viewBox={`0 0 256 256`}
-        />
+      <div className="flex flex-col gap-4">
+        <p className="flex flex-col gap-1">
+          <label htmlFor="value" className="text-stone-50">
+            Enter Value
+          </label>
+          <input
+            ref={inputRef}
+            id="value"
+            className="  px-2 py-1 focus:outline-none focus:ring-4 focus:ring-stone-600 focus:ring-offset-2"
+          />
+        </p>
+        <button className="bg-stone-50" onClick={handleGenarate}>
+          Genarate
+        </button>
       </div>
     </div>
   );

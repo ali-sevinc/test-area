@@ -84,7 +84,7 @@ export default function Header() {
           <ul className="flex flex-col items-center justify-center gap-2">
             <li>
               <button
-                onClick={() => handleNav("/")}
+                onClick={() => handleNav("/recipes")}
                 className="text-lg text-stone-700"
               >
                 Recipfy
@@ -92,7 +92,7 @@ export default function Header() {
             </li>
             <li>
               <button
-                onClick={() => handleNav("/favorites")}
+                onClick={() => handleNav("/recipes/favorites")}
                 className="text-lg text-stone-700"
               >
                 Favorites
@@ -100,7 +100,7 @@ export default function Header() {
             </li>
             <li>
               <button
-                onClick={() => handleNav("/About")}
+                onClick={() => handleNav("/recipes/About")}
                 className="text-lg text-stone-700"
               >
                 About
