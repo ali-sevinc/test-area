@@ -23,7 +23,7 @@ import {
   HiOutlineExclamationCircle,
   HiOutlineEyeDropper,
   HiOutlineFlag,
-  HiOutlineGift,
+  //HiOutlineGift,
   HiOutlineMoon,
   HiOutlinePlay,
   HiOutlineQrCode,
@@ -59,7 +59,7 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   },
   { id: "tab-content", text: "Tab Content", icon: <HiOutlineTable /> },
   { id: "modal-content", text: "Modal Content", icon: <HiOutlineBriefcase /> },
-  { id: "github-profile", text: "Github Profile", icon: <HiOutlineGift /> },
+  // { id: "github-profile", text: "Github Profile", icon: <HiOutlineGift /> },
   {
     id: "search-autocoplate",
     text: "Search Autocomplate",
