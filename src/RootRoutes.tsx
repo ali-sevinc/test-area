@@ -51,6 +51,7 @@ import UIProvider from "./components/recipe/uiContext";
 import NoteApp from "./components/note-tracker/NoteApp";
 import Dice from "./components/dice-roll/Dice";
 import StepsMenu from "./components/steps-menu/StepsMenu";
+import GitHubProfile from "./components/github-profile/GitHubProfile";
 ///
 
 const router = createBrowserRouter([
@@ -105,6 +106,7 @@ const router = createBrowserRouter([
   { path: "/drag-drop-notes", element: <NoteApp /> },
   { path: "/roll-dice", element: <Dice /> },
   { path: "/steps-menu", element: <StepsMenu /> },
+  { path: "/github-profile", element: <GitHubProfile /> },
 ]);
 
 export default function RootRoutes() {
