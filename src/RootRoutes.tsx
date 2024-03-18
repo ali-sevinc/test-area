@@ -1,59 +1,89 @@
+import { lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //**** */
-import HomePage from "./HomePage";
+const HomePage = lazy(() => import("./HomePage"));
+const Star = lazy(() => import("./components/start-rating/Star"));
+const Slider = lazy(() => import("./components/image-slider/Slider"));
+const LoadMoreButton = lazy(
+  () => import("./components/load-more/LoadMoreButton"),
+);
+const Sidebar = lazy(() => import("./components/menu-ccp/Sidebar"));
+const Menu = lazy(() => import("./components/menu/Menu"));
+const QRCodeGenerator = lazy(() => import("./components/qrcode/QRCode"));
+const Theme = lazy(() => import("./components/theme-change/Theme"));
+const ScrollIndicator = lazy(
+  () => import("./components/scroll-tracker/ScrollIndicator"),
+);
+const TabContent = lazy(() => import("./components/tab-contents/TabContent"));
+const ModalContent = lazy(() => import("./components/modal/ModalContent"));
+const SearchAutoComplete = lazy(
+  () => import("./components/search-autocomplete/SearchAutoComplete"),
+);
+const CountriesPage = lazy(
+  () => import("./components/country-filter/CountryFilter"),
+);
+const TicTacToe = lazy(() => import("./components/tic-tac-toe/TicTacToe"));
+const FeatureFlags = lazy(
+  () => import("./components/feature-flag/FeatureFlags"),
+);
+const OutsideClick = lazy(
+  () => import("./components/outside-click/OutsideClick"),
+);
+const ClickToScrtoll = lazy(
+  () => import("./components/click-scroll-top-bottom/ClickToScrtoll"),
+);
+const Weather = lazy(() => import("./components/wether/Weather"));
+const PlayGround = lazy(() => import("./components/framer-motion/PlayGround"));
+const TextExpander = lazy(
+  () => import("./components/text-expander/TextExpander"),
+);
+const ShopLayout = lazy(() => import("./components/shop-demo/layout/Layout"));
+const CCPContentTest = lazy(
+  () => import("./components/patterns/CCPContentTest"),
+);
+const RenderPropsTest = lazy(
+  () => import("./components/patterns/RenderPropsTest"),
+);
+//*****
+const ProductProvider = lazy(
+  () => import("./components/context-api/context/ProductContext"),
+);
+const ContextLayout = lazy(
+  () => import("./components/context-api/ContextLayout"),
+);
+const ProductsPage = lazy(
+  () => import("./components/context-api/containers/Products"),
+);
+const FavoritesPage = lazy(
+  () => import("./components/context-api/containers/Favorites"),
+);
+//****
+const PaginationTest = lazy(
+  () => import("./components/pagination/PaginationTest"),
+);
+const Testing = lazy(() => import("./components/testing"));
 
-import Star from "./components/start-rating/Star";
-import Slider from "./components/image-slider/Slider";
-import LoadMoreButton from "./components/load-more/LoadMoreButton";
-import Sidebar from "./components/menu-ccp/Sidebar";
-import Menu from "./components/menu/Menu";
-import QRCodeGenerator from "./components/qrcode/QRCode";
-import Theme from "./components/theme-change/Theme";
-import ScrollIndicator from "./components/scroll-tracker/ScrollIndicator";
-import TabContent from "./components/tab-contents/TabContent";
-import ModalContent from "./components/modal/ModalContent";
-import SearchAutoComplete from "./components/search-autocomplete/SearchAutoComplete";
-import CountriesPage from "./components/country-filter/CountryFilter";
-import TicTacToe from "./components/tic-tac-toe/TicTacToe";
-import FeatureFlags from "./components/feature-flag/FeatureFlags";
-import OutsideClick from "./components/outside-click/OutsideClick";
-import ClickToScrtoll from "./components/click-scroll-top-bottom/ClickToScrtoll";
-import Weather from "./components/wether/Weather";
-import PlayGround from "./components/framer-motion/PlayGround";
-import TextExpander from "./components/text-expander/TextExpander";
-import ShopLayout from "./components/shop-demo/layout/Layout";
-import CCPContentTest from "./components/patterns/CCPContentTest";
-import RenderPropsTest from "./components/patterns/RenderPropsTest";
-////
-import ContextLayout from "./components/context-api/ContextLayout";
-import ProductProvider from "./components/context-api/context/ProductContext";
-import ProductsPage from "./components/context-api/containers/Products";
-import FavoritesPage from "./components/context-api/containers/Favorites";
-////
-import PaginationTest from "./components/pagination/PaginationTest";
-import Testing from "./components/testing";
-//*** */
+//*****
+const Home = lazy(() => import("./components/recipe/pages/Home"));
+const Recipes = lazy(() => import("./components/recipe/pages/Recipes"));
+import { loader as recipeLoader } from "./components/recipe/pages/Recipes";
+const Details = lazy(() => import("./components/recipe/pages/Details"));
+import { loader as detailLoader } from "./components/recipe/pages/Details";
+const Favorites = lazy(() => import("./components/recipe/pages/Favorites"));
+const RootPage = lazy(() => import("./components/recipe/pages/RootPage"));
+const About = lazy(() => import("./components/recipe/pages/About"));
+const SearchProvider = lazy(() => import("./components/recipe/SearchContext"));
+const UIProvider = lazy(() => import("./components/recipe/uiContext"));
+//*****
+const NoteApp = lazy(() => import("./components/note-tracker/NoteApp"));
+const Dice = lazy(() => import("./components/dice-roll/Dice"));
+const StepsMenu = lazy(() => import("./components/steps-menu/StepsMenu"));
+const GitHubProfile = lazy(
+  () => import("./components/github-profile/GitHubProfile"),
+);
 
-///
-import Recipes, {
-  loader as recipeLoader,
-} from "./components/recipe/pages/Recipes";
-import Home from "./components/recipe/pages/Home";
-import Details, {
-  loader as detailLoader,
-} from "./components/recipe/pages/Details";
-import Favorites from "./components/recipe/pages/Favorites";
-import RootPage from "./components/recipe/pages/RootPage";
-import About from "./components/recipe/pages/About";
-import SearchProvider from "./components/recipe/SearchContext";
-import UIProvider from "./components/recipe/uiContext";
-import NoteApp from "./components/note-tracker/NoteApp";
-import Dice from "./components/dice-roll/Dice";
-import StepsMenu from "./components/steps-menu/StepsMenu";
-import GitHubProfile from "./components/github-profile/GitHubProfile";
-///
-
+//**************
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
   { path: "/star-rating", element: <Star /> },
