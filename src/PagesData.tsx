@@ -12,6 +12,7 @@ import {
   HiOutlineTable,
 } from "react-icons/hi";
 import {
+  HiOutlineAcademicCap,
   HiOutlineBars2,
   HiOutlineBriefcase,
   HiOutlineBuildingOffice,
@@ -107,4 +108,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   { id: "roll-dice", text: "Roll Dice", icon: <HiOutlineExclamationCircle /> },
   { id: "steps-menu", text: "Step Menu", icon: <HiOutlineMenuAlt2 /> },
   { id: "github-profile", text: "Github Profile", icon: <HiOutlineGift /> },
+  { id: "accordion", text: "Accordion", icon: <HiOutlineAcademicCap /> },
 ];

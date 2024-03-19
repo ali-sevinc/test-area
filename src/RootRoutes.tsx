@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //**** */
@@ -70,6 +70,7 @@ const Recipes = lazy(() => import("./components/recipe/pages/Recipes"));
 import { loader as recipeLoader } from "./components/recipe/pages/Recipes";
 const Details = lazy(() => import("./components/recipe/pages/Details"));
 import { loader as detailLoader } from "./components/recipe/pages/Details";
+import Loader from "./Loader";
 const Favorites = lazy(() => import("./components/recipe/pages/Favorites"));
 const RootPage = lazy(() => import("./components/recipe/pages/RootPage"));
 const About = lazy(() => import("./components/recipe/pages/About"));
@@ -82,6 +83,8 @@ const StepsMenu = lazy(() => import("./components/steps-menu/StepsMenu"));
 const GitHubProfile = lazy(
   () => import("./components/github-profile/GitHubProfile"),
 );
+
+const Accordion = lazy(() => import("./components/accordion-menu/Accordion"));
 
 //**************
 const router = createBrowserRouter([
@@ -137,6 +140,7 @@ const router = createBrowserRouter([
   { path: "/roll-dice", element: <Dice /> },
   { path: "/steps-menu", element: <StepsMenu /> },
   { path: "/github-profile", element: <GitHubProfile /> },
+  { path: "/accordion", element: <Accordion /> },
 ]);
 
 export default function RootRoutes() {
@@ -144,7 +148,9 @@ export default function RootRoutes() {
     <SearchProvider>
       <UIProvider>
         <ProductProvider>
-          <RouterProvider router={router} />
+          <Suspense fallback={<Loader />}>
+            <RouterProvider router={router} />
+          </Suspense>
         </ProductProvider>
       </UIProvider>
     </SearchProvider>
