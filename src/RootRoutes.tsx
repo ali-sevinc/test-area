@@ -85,6 +85,9 @@ const GitHubProfile = lazy(
 );
 
 const Accordion = lazy(() => import("./components/accordion-menu/Accordion"));
+const TipCalculator = lazy(
+  () => import("./components/tip-calculator/TipCalculator"),
+);
 
 //**************
 const router = createBrowserRouter([
@@ -141,6 +144,7 @@ const router = createBrowserRouter([
   { path: "/steps-menu", element: <StepsMenu /> },
   { path: "/github-profile", element: <GitHubProfile /> },
   { path: "/accordion", element: <Accordion /> },
+  { path: "/tip-calculator", element: <TipCalculator /> },
 ]);
 
 export default function RootRoutes() {

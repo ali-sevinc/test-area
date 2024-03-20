@@ -1,17 +1,24 @@
+.box {
+  background: #1f2f3f;
+  min-height: 100vh;
+  padding-top: 8rem;
+  display: flex;
+  justify-content: center;
+}
 .container {
-  width: 24rem;
-  margin: 1rem auto;
+  width: 20rem;
   text-align: center;
 }
 .row {
-  width: 24rem;
+  width: 18rem;
   display: grid;
-  grid-template-columns: 8rem 8rem 8rem;
+  grid-template-columns: 6rem 6rem 6rem;
+  gap: 1rem;
 }
 
 .square {
-  width: 8rem;
-  height: 8rem;
+  width: 6rem;
+  height: 6rem;
   box-sizing: border-box;
   background-color: #f1f1f1;
   border: 1px solid black;
@@ -19,17 +26,34 @@
   margin: 0;
   padding: 0;
   border-radius: 0;
-  font-size: 4rem;
+  font-size: 3.2rem;
   color: black;
+  border-radius: 12px;
+  margin-bottom: 1rem;
 }
 
 .reset {
   background-color: #4f4f4f;
   padding: 4px 8px;
   color: #fff;
-  margin-top: 1rem;
+  border-radius: 8px;
 }
 
 .container p {
   font-size: 1.4rem;
+  color: #f1f1f1;
+  padding: 0;
+}
+
+.square:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: flex;
+  padding: 4px 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
 }

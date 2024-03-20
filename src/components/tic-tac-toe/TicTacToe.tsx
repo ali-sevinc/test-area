@@ -61,8 +61,8 @@ export default function TicTacToe() {
 
     const newBoard = game.board.map((rowArray, rowIndex) =>
       rowArray.map((cell, colIndex) =>
-        row === rowIndex && col === colIndex ? game.turn : cell
-      )
+        row === rowIndex && col === colIndex ? game.turn : cell,
+      ),
     );
     setGame((cur) => ({
       ...cur,
@@ -102,31 +102,38 @@ export default function TicTacToe() {
   // console.log(draw);
 
   return (
-    <div className={styles.container}>
-      {game.board.map((row, rowIndex) => (
-        <div className={styles.row} key={rowIndex}>
-          {row.map((cell, colIndex) => (
-            <button
-              disabled={
-                winner !== null ||
-                draw ||
-                game.board[rowIndex][colIndex] !== null
-              }
-              className={styles.square}
-              key={colIndex}
-              onClick={() => handleToggleTurn(rowIndex, colIndex)}
-            >
-              {cell}
-            </button>
-          ))}
+    <div className={styles.box}>
+      <div className={styles.container}>
+        {game.board.map((row, rowIndex) => (
+          <div className={styles.row} key={rowIndex}>
+            {row.map((cell, colIndex) => (
+              <button
+                disabled={
+                  winner !== null ||
+                  draw ||
+                  game.board[rowIndex][colIndex] !== null
+                }
+                className={styles.square}
+                key={colIndex}
+                onClick={() => handleToggleTurn(rowIndex, colIndex)}
+              >
+                {cell}
+              </button>
+            ))}
+          </div>
+        ))}
+        <div className={styles.actions}>
+          {!winner && !draw && <p>{game.turn} Turn!</p>}
+          {!winner && draw && <p>Draw</p>}
+          {winner && <p>{winner} won</p>}
+          <button
+            className={styles.reset}
+            onClick={() => setGame(initialState)}
+          >
+            Reset
+          </button>
         </div>
-      ))}
-      <button className={styles.reset} onClick={() => setGame(initialState)}>
-        Reset
-      </button>
-      {!winner && !draw && <p>{game.turn} Turn!</p>}
-      {!winner && draw && <p>Draw</p>}
-      {winner && <p>{winner} won</p>}
+      </div>
     </div>
   );
 }

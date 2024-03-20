@@ -31,6 +31,7 @@ import {
   HiOutlineQuestionMarkCircle,
   HiOutlineShoppingCart,
   HiOutlineStar,
+  HiOutlineTicket,
 } from "react-icons/hi2";
 
 export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
@@ -109,4 +110,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   { id: "steps-menu", text: "Step Menu", icon: <HiOutlineMenuAlt2 /> },
   { id: "github-profile", text: "Github Profile", icon: <HiOutlineGift /> },
   { id: "accordion", text: "Accordion", icon: <HiOutlineAcademicCap /> },
+  { id: "tip-calculator", text: "Tip Calculator", icon: <HiOutlineTicket /> },
 ];
