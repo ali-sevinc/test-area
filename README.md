@@ -34,3 +34,5 @@
 - Steps Menu
 - Github User Profile
 - Accordion Menu
+- Tip calculator
+- Bill Splitter
