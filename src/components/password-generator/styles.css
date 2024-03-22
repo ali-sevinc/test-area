@@ -1,0 +1,7 @@
+.range {
+  @apply bg-stone-100 h-1 w-full cursor-pointer;
+}
+
+.range::-webkit-slider-thumb {
+  @apply bg-white border-4 border-stone-100 h-6 w-6 rounded-full;
+}

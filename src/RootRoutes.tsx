@@ -89,6 +89,9 @@ const TipCalculator = lazy(
   () => import("./components/tip-calculator/TipCalculator"),
 );
 const SplitBill = lazy(() => import("./components/bill-split/SplitBill"));
+const PasswordGenerator = lazy(
+  () => import("./components/password-generator/PasswordGenerator"),
+);
 
 //**************
 const router = createBrowserRouter([
@@ -147,6 +150,7 @@ const router = createBrowserRouter([
   { path: "/accordion", element: <Accordion /> },
   { path: "/tip-calculator", element: <TipCalculator /> },
   { path: "/split-bill", element: <SplitBill /> },
+  { path: "/password-generator", element: <PasswordGenerator /> },
 ]);
 
 export default function RootRoutes() {

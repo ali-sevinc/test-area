@@ -23,6 +23,7 @@ import {
   HiOutlineDocumentArrowDown,
   HiOutlineDocumentText,
   HiOutlineExclamationCircle,
+  HiOutlineEye,
   HiOutlineEyeDropper,
   HiOutlineFlag,
   HiOutlineGift,
@@ -113,4 +114,9 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   { id: "accordion", text: "Accordion", icon: <HiOutlineAcademicCap /> },
   { id: "tip-calculator", text: "Tip Calculator", icon: <HiOutlineTicket /> },
   { id: "split-bill", text: "Split Bill", icon: <HiOutlineCake /> },
+  {
+    id: "password-generator",
+    text: "Password Generator",
+    icon: <HiOutlineEye />,
+  },
 ];

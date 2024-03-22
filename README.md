@@ -36,3 +36,4 @@
 - Accordion Menu
 - Tip calculator
 - Bill Splitter
+- Password Generator
