@@ -20,6 +20,7 @@ import {
   HiOutlineCircleStack,
   HiOutlineCloud,
   HiOutlineCommandLine,
+  HiOutlineCurrencyDollar,
   HiOutlineDocumentArrowDown,
   HiOutlineDocumentText,
   HiOutlineExclamationCircle,
@@ -118,5 +119,10 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     id: "password-generator",
     text: "Password Generator",
     icon: <HiOutlineEye />,
+  },
+  {
+    id: "currency-calculator",
+    text: "Currencey Calculator",
+    icon: <HiOutlineCurrencyDollar />,
   },
 ];

@@ -37,3 +37,4 @@
 - Tip calculator
 - Bill Splitter
 - Password Generator
+- Currency Calculator
