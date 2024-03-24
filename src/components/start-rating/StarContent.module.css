@@ -1,0 +1,50 @@
+.container {
+  min-height: 100dvh;
+  background-color: #1f2f3f;
+  padding-top: 16rem;
+}
+
+.content {
+  max-width: 32rem;
+  width: 100%;
+  background-color: #1b1c1e;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin: 0 auto;
+  color: #cdcdcd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 4rem;
+  color: #f7eb0f;
+  border: 1px solid #f7eb0f;
+  border-radius: 100%;
+}
+
+.container h1 {
+  font-size: 2.2rem;
+}
+.container h2 {
+  font-size: 1.6rem;
+}
+.rate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit {
+  text-align: center;
+}
+.submit button {
+  background-color: #f7eb0f;
+  color: #1b1c1e;
+  font-size: 1.4rem;
+  padding: 0.5rem 1.1rem;
+  display: inline-block;
+  width: 12rem;
+  border-radius: 12px;
+}

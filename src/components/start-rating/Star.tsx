@@ -8,6 +8,7 @@ type PropsType = {
   defaultRating?: number;
   sizes?: number;
   onGetValue?: (value: number) => void;
+  isShowRatingNum?: boolean;
 };
 export default function Star({
   starsNum = 10,
@@ -15,6 +16,7 @@ export default function Star({
   defaultRating = 0,
   sizes = 44,
   onGetValue,
+  isShowRatingNum = true,
 }: PropsType) {
   const [hoveredStars, setHoveredStars] = useState<number>(0);
   const [rating, setRating] = useState<number>(defaultRating);
@@ -48,7 +50,9 @@ export default function Star({
         ))}
       </div>
 
-      <p style={{ fontSize: `${sizes - 8}px` }}>{ratingNum}</p>
+      {isShowRatingNum && (
+        <p style={{ fontSize: `${sizes - 8}px` }}>{ratingNum}</p>
+      )}
     </div>
   );
 }

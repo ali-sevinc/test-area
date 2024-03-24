@@ -4,7 +4,15 @@ export type ItemType = {
   children?: {
     name: string;
     to: string;
-    children?: { name: string; to: string }[];
+    children?: {
+      name: string;
+      to: string;
+      children?: {
+        name: string;
+        to: string;
+        children?: { name: string; to: string }[];
+      }[];
+    }[];
   }[];
 };
 export const menuData: ItemType[] = [
@@ -18,7 +26,20 @@ export const menuData: ItemType[] = [
         to: "details",
         children: [
           { name: "Location", to: "location" },
-          { name: "Friends", to: "friends" },
+          {
+            name: "Friends",
+            to: "friends",
+            children: [
+              {
+                name: "Details",
+                to: "details",
+                children: [
+                  { name: "Location", to: "location" },
+                  { name: "Friends", to: "friends" },
+                ],
+              },
+            ],
+          },
         ],
       },
     ],

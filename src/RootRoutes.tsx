@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //**** */
 const HomePage = lazy(() => import("./HomePage"));
-const Star = lazy(() => import("./components/start-rating/Star"));
+const StarContent = lazy(() => import("./components/start-rating/StarContent"));
 const Slider = lazy(() => import("./components/image-slider/Slider"));
 const LoadMoreButton = lazy(
   () => import("./components/load-more/LoadMoreButton"),
@@ -99,7 +99,7 @@ const CurrencyCalculator = lazy(
 //**************
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
-  { path: "/star-rating", element: <Star /> },
+  { path: "/star-rating", element: <StarContent /> },
   { path: "/slider", element: <Slider /> },
   { path: "/load-more-btn", element: <LoadMoreButton /> },
   { path: "/sidebar", element: <Sidebar /> },

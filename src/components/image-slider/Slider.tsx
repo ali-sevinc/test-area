@@ -51,48 +51,50 @@ export default function Slider() {
       </div>
     );
   return (
-    <div className={styles.container}>
-      {isLoading ? (
-        <div className={styles.loading}>
-          <HiArrowPath />
-        </div>
-      ) : (
-        <>
-          <button onClick={handleLeft} className={styles.left}>
-            <HiArrowLeftCircle />
-          </button>
-          <div
-            className={styles.images}
-            style={{ transform: `translateX(${-currentImage * 520}px)` }}
-          >
-            {images.map((image) => {
-              return (
-                <img
-                  key={image.id}
-                  src={image.download_url}
-                  alt={image.author}
+    <div className={styles.background}>
+      <div className={styles.container}>
+        {isLoading ? (
+          <div className={styles.loading}>
+            <HiArrowPath />
+          </div>
+        ) : (
+          <>
+            <button onClick={handleLeft} className={styles.left}>
+              <HiArrowLeftCircle />
+            </button>
+            <div
+              className={styles.images}
+              style={{ transform: `translateX(${-currentImage * 520}px)` }}
+            >
+              {images.map((image) => {
+                return (
+                  <img
+                    key={image.id}
+                    src={image.download_url}
+                    alt={image.author}
+                  />
+                );
+              })}
+            </div>
+            <div className={styles.circlesContainer}>
+              {images.map((_, index) => (
+                <div
+                  onClick={() => setCurrentImage(index)}
+                  key={index}
+                  className={styles.circles}
+                  style={{
+                    backgroundColor: index === currentImage ? "white" : "",
+                  }}
                 />
-              );
-            })}
-          </div>
-          <div className={styles.circlesContainer}>
-            {images.map((_, index) => (
-              <div
-                onClick={() => setCurrentImage(index)}
-                key={index}
-                className={styles.circles}
-                style={{
-                  backgroundColor: index === currentImage ? "white" : "",
-                }}
-              />
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <button onClick={handleRight} className={styles.right}>
-            <HiArrowRightCircle />
-          </button>
-        </>
-      )}
+            <button onClick={handleRight} className={styles.right}>
+              <HiArrowRightCircle />
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 }
