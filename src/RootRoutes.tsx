@@ -95,6 +95,7 @@ const PasswordGenerator = lazy(
 const CurrencyCalculator = lazy(
   () => import("./components/currency-calculator/CurrencyCalculator"),
 );
+const MultiStep = lazy(() => import("./components/multi-step/MultiStep"));
 
 //**************
 const router = createBrowserRouter([
@@ -155,6 +156,7 @@ const router = createBrowserRouter([
   { path: "/split-bill", element: <SplitBill /> },
   { path: "/password-generator", element: <PasswordGenerator /> },
   { path: "/currency-calculator", element: <CurrencyCalculator /> },
+  { path: "/multi-step", element: <MultiStep /> },
 ]);
 
 export default function RootRoutes() {

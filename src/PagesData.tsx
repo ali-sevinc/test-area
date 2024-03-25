@@ -6,6 +6,7 @@ import {
   HiOutlineDownload,
   HiOutlineMenu,
   HiOutlineMenuAlt2,
+  HiOutlineMenuAlt3,
   HiOutlineMenuAlt4,
   HiOutlinePaperAirplane,
   HiOutlineSearch,
@@ -125,4 +126,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     text: "Currencey Calculator",
     icon: <HiOutlineCurrencyDollar />,
   },
+  { id: "multi-step", text: "Multi Step", icon: <HiOutlineMenuAlt3 /> },
 ];
