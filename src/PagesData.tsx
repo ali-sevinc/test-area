@@ -3,6 +3,7 @@ import {
   HiOutlineArrowCircleRight,
   HiOutlineArrowDown,
   HiOutlineCursorClick,
+  HiOutlineDesktopComputer,
   HiOutlineDownload,
   HiOutlineMenu,
   HiOutlineMenuAlt2,
@@ -127,4 +128,9 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     icon: <HiOutlineCurrencyDollar />,
   },
   { id: "multi-step", text: "Multi Step", icon: <HiOutlineMenuAlt3 /> },
+  {
+    id: "localstorage-customhook",
+    text: "Localstorage Customhook",
+    icon: <HiOutlineDesktopComputer />,
+  },
 ];

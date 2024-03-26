@@ -39,3 +39,4 @@
 - Password Generator
 - Currency Calculator
 - Multi Steps
+- Localstorage Customhook
