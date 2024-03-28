@@ -5,6 +5,7 @@ import {
   HiOutlineCursorClick,
   HiOutlineDesktopComputer,
   HiOutlineDownload,
+  HiOutlineGlobe,
   HiOutlineMenu,
   HiOutlineMenuAlt2,
   HiOutlineMenuAlt3,
@@ -132,5 +133,10 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     id: "localstorage-customhook",
     text: "Localstorage Customhook",
     icon: <HiOutlineDesktopComputer />,
+  },
+  {
+    id: "geolocation-demo",
+    text: "Geolocation Demo",
+    icon: <HiOutlineGlobe />,
   },
 ];

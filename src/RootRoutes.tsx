@@ -99,6 +99,7 @@ const MultiStep = lazy(() => import("./components/multi-step/MultiStep"));
 const LocalStorageTest = lazy(
   () => import("./components/localstorage-customhook/LocalStorageTest"),
 );
+const GeoLoc = lazy(() => import("./components/geolocation-demo/GeoLoc"));
 
 //**************
 const router = createBrowserRouter([
@@ -161,6 +162,7 @@ const router = createBrowserRouter([
   { path: "/currency-calculator", element: <CurrencyCalculator /> },
   { path: "/multi-step", element: <MultiStep /> },
   { path: "/localstorage-customhook", element: <LocalStorageTest /> },
+  { path: "/geolocation-demo", element: <GeoLoc /> },
 ]);
 
 export default function RootRoutes() {
