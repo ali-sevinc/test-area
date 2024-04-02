@@ -16,6 +16,7 @@ import {
 } from "react-icons/hi";
 import {
   HiOutlineAcademicCap,
+  HiOutlineBanknotes,
   HiOutlineBars2,
   HiOutlineBriefcase,
   HiOutlineBuildingOffice,
@@ -138,5 +139,10 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     id: "geolocation-demo",
     text: "Geolocation Demo",
     icon: <HiOutlineGlobe />,
+  },
+  {
+    id: "bank-with-reducer",
+    text: "Demo Bank",
+    icon: <HiOutlineBanknotes />,
   },
 ];

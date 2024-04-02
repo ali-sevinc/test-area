@@ -71,6 +71,7 @@ import { loader as recipeLoader } from "./components/recipe/pages/Recipes";
 const Details = lazy(() => import("./components/recipe/pages/Details"));
 import { loader as detailLoader } from "./components/recipe/pages/Details";
 import Loader from "./Loader";
+import Bank from "./components/bankaccount-with-reducer/Bank";
 const Favorites = lazy(() => import("./components/recipe/pages/Favorites"));
 const RootPage = lazy(() => import("./components/recipe/pages/RootPage"));
 const About = lazy(() => import("./components/recipe/pages/About"));
@@ -163,6 +164,7 @@ const router = createBrowserRouter([
   { path: "/multi-step", element: <MultiStep /> },
   { path: "/localstorage-customhook", element: <LocalStorageTest /> },
   { path: "/geolocation-demo", element: <GeoLoc /> },
+  { path: "/bank-with-reducer", element: <Bank /> },
 ]);
 
 export default function RootRoutes() {

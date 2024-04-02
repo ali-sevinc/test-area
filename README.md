@@ -41,3 +41,4 @@
 - Multi Steps
 - Localstorage Customhook
 - GeoLocation-ReverseGeolocation Demo
+- Redux Bank
