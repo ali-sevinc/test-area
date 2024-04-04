@@ -1,13 +1,28 @@
+.layout {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
 .aside {
-  height: 100dvh;
-  width: 24rem;
-  background-color: #dcdcdc;
+  background-color: #f9f5f5;
   display: flex;
   flex-direction: column;
   color: #1c1c1c;
   text-align: center;
   padding: 0 1rem;
+  padding: 2.4rem;
+  border-right: 1px solid #dcdcdc;
+  grid-row: 1/-1;
 }
-.aside h1 {
-  font-size: 2.4rem;
+
+.header {
+  background-color: #f9f5f5;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 1.2rem 0.8rem;
+}
+.content {
+  background-color: #f9f5f5;
+  padding: 4.2rem 4.8rem 5rem;
 }
