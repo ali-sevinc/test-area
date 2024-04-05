@@ -30,6 +30,7 @@ import {
   HiOutlineExclamationCircle,
   HiOutlineEye,
   HiOutlineEyeDropper,
+  HiOutlineFingerPrint,
   HiOutlineFlag,
   HiOutlineGift,
   HiOutlineMoon,
@@ -144,5 +145,10 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     id: "bank-with-reducer",
     text: "Demo Bank",
     icon: <HiOutlineBanknotes />,
+  },
+  {
+    id: "rock-paper-scissors",
+    text: "Rock Paper Scissors",
+    icon: <HiOutlineFingerPrint />,
   },
 ];

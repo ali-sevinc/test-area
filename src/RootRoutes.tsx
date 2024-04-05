@@ -101,6 +101,9 @@ const LocalStorageTest = lazy(
   () => import("./components/localstorage-customhook/LocalStorageTest"),
 );
 const GeoLoc = lazy(() => import("./components/geolocation-demo/GeoLoc"));
+const RockPaperScissors = lazy(
+  () => import("./components/rock-paper-scissors/RockPaperScissors"),
+);
 
 //**************
 const router = createBrowserRouter([
@@ -165,6 +168,7 @@ const router = createBrowserRouter([
   { path: "/localstorage-customhook", element: <LocalStorageTest /> },
   { path: "/geolocation-demo", element: <GeoLoc /> },
   { path: "/bank-with-reducer", element: <Bank /> },
+  { path: "/rock-paper-scissors", element: <RockPaperScissors /> },
 ]);
 
 export default function RootRoutes() {

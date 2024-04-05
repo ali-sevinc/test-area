@@ -42,3 +42,4 @@
 - Localstorage Customhook
 - GeoLocation-ReverseGeolocation Demo
 - Redux Bank
+- Rock-Paper-Scissors
