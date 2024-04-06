@@ -8,9 +8,9 @@ type PropsType = {
 export default function GameItem({ children, onClick, isSelected }: PropsType) {
   return (
     <li
-      className={` text-[4rem] border-[1rem] md:text-[8rem] md:border-[2rem]  ${
+      className={` border-[1rem] text-[4rem] md:border-[2rem] md:text-[6rem]  ${
         isSelected ? "border-green-700" : "border-stone-700"
-      } box-border bg-stone-50 text-stone-700 rounded-full px-8 flex items-center justify-center py-8 cursor-pointer`}
+      } box-border flex cursor-pointer items-center justify-center rounded-full bg-stone-50 px-8 py-8 text-stone-700`}
     >
       <button className="w-full" onClick={onClick}>
         {children}

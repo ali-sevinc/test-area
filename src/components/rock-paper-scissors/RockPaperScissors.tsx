@@ -49,7 +49,7 @@ export default function RockPaperScissors() {
 
       return () => clearTimeout(timer);
     },
-    [rolled]
+    [rolled],
   );
   const whoWin =
     selectedIcon !== null && computerSelect !== null
@@ -81,7 +81,7 @@ export default function RockPaperScissors() {
     );
 
   return (
-    <div className="bg-gradient-to-tr from-slate-700 via-slate-500 to-slate-600 min-h-screen pt-20">
+    <div className="min-h-screen bg-gradient-to-tr from-slate-700 via-slate-500 to-slate-600 pt-20">
       {whoWin !== "" && (
         <FinishScreen
           onReset={handleReset}
@@ -90,25 +90,25 @@ export default function RockPaperScissors() {
           whoWin={whoWin}
         />
       )}
-      <h1 className="text-center mb-16  text-slate-50 text-xl md:text-4xl md:mb-24 flex gap-1 justify-center items-center">
-        <span className="flex items-center gap-1 justify-center">
-          Roc
+      <h1 className="mb-16 flex  items-center justify-center gap-1 text-center text-xl text-slate-50 md:mb-24 md:text-4xl">
+        <span className="flex items-center justify-center gap-1">
+          Rock
           <FaHandRock />
         </span>
         <span className=" px-2">/</span>
-        <span className="flex items-center gap-1 justify-center">
+        <span className="flex items-center justify-center gap-1">
           Paper
           <FaHandPaper />
         </span>
         <span className=" px-2">/</span>
-        <span className="flex items-center gap-1 justify-center">
+        <span className="flex items-center justify-center gap-1">
           Scissors
           <FaHandScissors />
         </span>
       </h1>
       <ul
-        className={` w-full max-w-[40rem] mx-auto flex flex-wrap items-center justify-center gap-8 max-h-[32rem] ${
-          rolled ? "animate-bounce " : ""
+        className={`mx-auto flex w-full max-w-[40rem] flex-wrap items-center justify-center gap-8 ${
+          rolled ? "animate-bounce" : ""
         }`}
       >
         <GameItem
