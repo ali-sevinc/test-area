@@ -1,3 +1,4 @@
+import { AiOutlineCreditCard } from "react-icons/ai";
 import {
   HiOutlineAnnotation,
   HiOutlineArrowCircleRight,
@@ -150,5 +151,10 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     id: "rock-paper-scissors",
     text: "Rock Paper Scissors",
     icon: <HiOutlineFingerPrint />,
+  },
+  {
+    id: "demo-card-screen",
+    text: "Demo Card Screen",
+    icon: <AiOutlineCreditCard />,
   },
 ];

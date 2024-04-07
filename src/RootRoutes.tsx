@@ -104,6 +104,9 @@ const GeoLoc = lazy(() => import("./components/geolocation-demo/GeoLoc"));
 const RockPaperScissors = lazy(
   () => import("./components/rock-paper-scissors/RockPaperScissors"),
 );
+const CardScreen = lazy(
+  () => import("./components/demo-card-screen/CardScreen"),
+);
 
 //**************
 const router = createBrowserRouter([
@@ -169,6 +172,7 @@ const router = createBrowserRouter([
   { path: "/geolocation-demo", element: <GeoLoc /> },
   { path: "/bank-with-reducer", element: <Bank /> },
   { path: "/rock-paper-scissors", element: <RockPaperScissors /> },
+  { path: "/demo-card-screen", element: <CardScreen /> },
 ]);
 
 export default function RootRoutes() {

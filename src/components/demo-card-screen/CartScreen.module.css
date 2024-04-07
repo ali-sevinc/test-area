@@ -1,0 +1,9 @@
+.container input::-webkit-inner-spin-button,
+.container input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container input {
+  -moz-appearance: textfield;
+}
