@@ -3,6 +3,7 @@ import {
   CartItem as CartItemType,
   addItem,
   removeItem,
+  clearItem,
 } from "../shop/shopSlice";
 
 import styles from "./CartItem.module.css";
@@ -16,7 +17,10 @@ export default function CartItem({ item }: { item: CartItemType }) {
       <p>{item.title}</p>
       <div className={styles.actions}>
         {item.quantity > 1 && (
-          <button className={styles.clear}>
+          <button
+            onClick={() => dispatch(clearItem({ id: item.id }))}
+            className={styles.clear}
+          >
             <HiTrash />
           </button>
         )}
