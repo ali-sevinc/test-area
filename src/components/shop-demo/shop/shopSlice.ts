@@ -21,13 +21,13 @@ export const shopSlice = createSlice({
   reducers: {
     addItem: (state, action: PayloadAction<CartItem>) => {
       const existedItem = state.cart.find(
-        (item) => item.id === action.payload.id
+        (item) => item.id === action.payload.id,
       );
       if (existedItem) {
         state.cart = state.cart.map((item) =>
           item.id === existedItem.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
+            : item,
         );
       } else {
         state.cart = [...state.cart, action.payload];
@@ -35,7 +35,7 @@ export const shopSlice = createSlice({
     },
     removeItem: (state, action: PayloadAction<{ id: number }>) => {
       const existedItem = state.cart.find(
-        (item) => item.id === action.payload.id
+        (item) => item.id === action.payload.id,
       );
 
       if (!existedItem) return;
@@ -44,11 +44,14 @@ export const shopSlice = createSlice({
         state.cart = state.cart.map((item) =>
           item.id === existedItem.id
             ? { ...item, quantity: item.quantity - 1 }
-            : item
+            : item,
         );
       } else {
         state.cart = state.cart.filter((item) => item.id !== existedItem.id);
       }
+    },
+    clearItem(state, action: PayloadAction<{ id: number }>) {
+      state.cart = state.cart.filter((item) => item.id !== action.payload.id);
     },
     showCartModal(state) {
       state.showCart = true;
@@ -68,6 +71,7 @@ export const {
   searhHandle,
   showCartModal,
   hideCartModal,
+  clearItem,
 } = shopSlice.actions;
 
 export default shopSlice.reducer;

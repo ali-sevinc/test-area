@@ -23,3 +23,8 @@
 .actions button:hover {
   background-color: #9f9f9f;
 }
+
+.actions .clear {
+  font-size: 18px;
+  padding: 7px;
+}

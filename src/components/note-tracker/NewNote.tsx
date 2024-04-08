@@ -18,7 +18,7 @@ export default function NewNote() {
         ref.current.close();
       }
     },
-    [showNewNote]
+    [showNewNote],
   );
 
   function handleChange(event: ChangeEvent<HTMLTextAreaElement>) {
@@ -45,11 +45,11 @@ export default function NewNote() {
         exit={{ opacity: 0, y: 100 }}
         ref={ref}
         onClose={handleHideNewNote}
-        className=" backdrop:bg-stone-900/70 rounded-xl"
+        className=" rounded-xl backdrop:bg-stone-900/70"
       >
         <form
           onSubmit={handleSubmit}
-          className="w-[24rem] flex flex-col gap-4 px-4 py-6 rounded-xl"
+          className="flex w-[24rem] flex-col gap-4 rounded-xl px-4 py-6"
         >
           <h2>New Note</h2>
           <p>
@@ -60,25 +60,25 @@ export default function NewNote() {
               rows={6}
               value={text}
               onChange={handleChange}
-              className="w-full p-2 text-xl focus:outline-none focus:ring-2 border"
+              className="w-full border p-2 text-xl focus:outline-none focus:ring-2"
             />
           </p>
           <p>{text.length}/200</p>
           <div className="flex items-center justify-end gap-4">
             <button
-              className="hover:scale-105 duration-200"
+              className="duration-200 hover:scale-105"
               onClick={handleHideNewNote}
               type="button"
             >
               Close
             </button>
-            <button className="px-4 border py-2 bg-sky-300 hover:bg-sky-400 duration-200">
+            <button className="border bg-sky-300 px-4 py-2 duration-200 hover:bg-sky-400">
               Add
             </button>
           </div>
         </form>
       </motion.dialog>
     </AnimatePresence>,
-    document.getElementById("modal")!
+    document.getElementById("modal")!,
   );
 }

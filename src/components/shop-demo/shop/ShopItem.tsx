@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { ItemType } from "./Shop";
 import styles from "./ShopItem.module.css";
 import { RootState } from "../store/store";
-import { addItem, removeItem } from "./shopSlice";
+import { addItem, removeItem, clearItem } from "./shopSlice";
+import { HiTrash } from "react-icons/hi";
 
 export default function ShopItem({ item }: { item: ItemType }) {
   const { cart } = useSelector((state: RootState) => state.shop);
@@ -14,6 +15,10 @@ export default function ShopItem({ item }: { item: ItemType }) {
   }
   function handlRemoveItem() {
     dispatch(removeItem({ id: item.id }));
+  }
+
+  function handleClearItem() {
+    dispatch(clearItem({ id: item.id }));
   }
 
   return (
@@ -65,6 +70,11 @@ export default function ShopItem({ item }: { item: ItemType }) {
                 <button className={styles.small} onClick={handleAddItemToCart}>
                   +
                 </button>
+                {isItemInCart.quantity > 1 && (
+                  <button className={styles.clear} onClick={handleClearItem}>
+                    <HiTrash />
+                  </button>
+                )}
               </div>
             )}
           </div>

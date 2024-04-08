@@ -59,6 +59,12 @@
   padding: 4px;
   border-radius: 50%;
 }
+.actions .clear {
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 50%;
+}
+
 .price {
   margin-bottom: 12px;
   font-size: 1.2rem;

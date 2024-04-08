@@ -6,6 +6,7 @@ import {
 } from "../shop/shopSlice";
 
 import styles from "./CartItem.module.css";
+import { HiTrash } from "react-icons/hi";
 
 export default function CartItem({ item }: { item: CartItemType }) {
   const dispatch = useDispatch();
@@ -14,6 +15,11 @@ export default function CartItem({ item }: { item: CartItemType }) {
     <li className={styles.item}>
       <p>{item.title}</p>
       <div className={styles.actions}>
+        {item.quantity > 1 && (
+          <button className={styles.clear}>
+            <HiTrash />
+          </button>
+        )}
         <button onClick={() => dispatch(removeItem({ id: item.id }))}>-</button>
         {item.quantity}
         <button onClick={() => dispatch(addItem(item))}>+</button>
