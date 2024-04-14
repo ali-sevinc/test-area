@@ -110,7 +110,11 @@ const CardScreen = lazy(
 
 //**************
 const router = createBrowserRouter([
-  { path: "/", element: <HomePage /> },
+  {
+    path: "/",
+    element: <HomePage />,
+    errorElement: <ErrorFallback />,
+  },
   { path: "/star-rating", element: <StarContent /> },
   { path: "/slider", element: <Slider /> },
   { path: "/load-more-btn", element: <LoadMoreButton /> },
@@ -175,16 +179,26 @@ const router = createBrowserRouter([
   { path: "/demo-card-screen", element: <CardScreen /> },
 ]);
 
+///error boundary
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "./ErrorFallback.tsx";
+///
+
 export default function RootRoutes() {
   return (
-    <SearchProvider>
-      <UIProvider>
-        <ProductProvider>
-          <Suspense fallback={<Loader />}>
-            <RouterProvider router={router} />
-          </Suspense>
-        </ProductProvider>
-      </UIProvider>
-    </SearchProvider>
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onReset={() => window.location.replace("/")}
+    >
+      <SearchProvider>
+        <UIProvider>
+          <ProductProvider>
+            <Suspense fallback={<Loader />}>
+              <RouterProvider router={router} />
+            </Suspense>
+          </ProductProvider>
+        </UIProvider>
+      </SearchProvider>
+    </ErrorBoundary>
   );
 }
