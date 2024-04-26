@@ -1,4 +1,5 @@
 import { AiOutlineCreditCard } from "react-icons/ai";
+import { BiNotification } from "react-icons/bi";
 import { CiMap } from "react-icons/ci";
 import {
   HiOutlineAnnotation,
@@ -159,4 +160,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     icon: <AiOutlineCreditCard />,
   },
   { id: "map-interact", text: "Map Interact", icon: <CiMap /> },
+  { id: "notifications-demo", text: "Notifications", icon: <BiNotification /> },
 ];

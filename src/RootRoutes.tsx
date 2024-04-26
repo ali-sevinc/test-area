@@ -108,6 +108,9 @@ const CardScreen = lazy(
   () => import("./components/demo-card-screen/CardScreen"),
 );
 const Map = lazy(() => import("./components/map-interact/Map"));
+const Notifications = lazy(
+  () => import("./components/notifications/Notifications"),
+);
 
 //**************
 const router = createBrowserRouter([
@@ -179,6 +182,7 @@ const router = createBrowserRouter([
   { path: "/rock-paper-scissors", element: <RockPaperScissors /> },
   { path: "/demo-card-screen", element: <CardScreen /> },
   { path: "/map-interact", element: <Map /> },
+  { path: "/notifications-demo", element: <Notifications /> },
 ]);
 
 ///error boundary

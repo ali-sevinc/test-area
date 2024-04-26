@@ -45,3 +45,4 @@
 - Rock-Paper-Scissors
 - Credit Card Save Screen
 - Interact with the Map
+- Notifications
