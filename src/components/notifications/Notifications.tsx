@@ -1,4 +1,8 @@
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import NotificationsHeader from "./NotificationsHeader";
+import NotificationItem from "./NotificationItem";
+import Modal from "./Modal";
+import { AnimatePresence } from "framer-motion";
 
 const DUMMY_NOTIFICATONS = [
   {
@@ -59,7 +63,7 @@ export default function Notifications() {
 
   const numNotifications = notifications.reduce(
     (acc, not) => (!not.isReaded ? acc + 1 : acc),
-    0
+    0,
   );
   const hasNotification = numNotifications > 0;
 
@@ -73,10 +77,10 @@ export default function Notifications() {
   function markAllRead() {
     setNotifications((cur) => cur.map((item) => ({ ...item, isReaded: true })));
   }
-  function markReadWithHover(id: string) {
+  function handleMarkReadWithHover(id: string) {
     if (notifications.find((not) => not.id === id)?.isReaded) return;
     setNotifications((cur) =>
-      cur.map((not) => (not.id === id ? { ...not, isReaded: true } : not))
+      cur.map((not) => (not.id === id ? { ...not, isReaded: true } : not)),
     );
   }
 
@@ -97,93 +101,54 @@ export default function Notifications() {
 
       return () => document.removeEventListener("keydown", eventHandler);
     },
-    [showNotifications]
+    [showNotifications],
   );
 
   return (
-    <>
-      <header className="border-b-2 bg-stone-100 h-24 max-w-6xl mx-auto px-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Notifications-Demo</h1>
-        <div>
-          <button
-            onClick={handleShow}
-            className="w-44 h-12 flex items-center gap-4 focus:outline-none"
-          >
-            <span className="font-semibold">Notifications</span>
-            {hasNotification && (
-              <b className="text-sm  p-0.5 px-2 rounded-md text-stone-50 bg-blue-800">
-                {numNotifications}
-              </b>
-            )}
-          </button>
-        </div>
-      </header>
-      <div className="text-center py-12">
+    <div className="min-h-screen w-full">
+      <NotificationsHeader
+        hasNotification={hasNotification}
+        numNotifications={numNotifications}
+        onShowNotifications={handleShow}
+      />
+      <div className="py-12 text-center">
         <button
           onClick={handleResetNotifications}
-          className="border bg-blue-700 text-stone-50 px-4 py-2 rounded-xl"
+          className="rounded-xl border bg-blue-700 px-4 py-2 text-stone-50"
         >
           Reset Notifications
         </button>
       </div>
-      {showNotifications && (
-        <Modal onClose={handleHide}>
-          <div className="flex justify-between pb-4">
-            <h2 className="flex items-center gap-2">
-              <span className="font-semibold ">Notifications</span>
+      <AnimatePresence>
+        {showNotifications && (
+          <Modal onClose={handleHide}>
+            <header className="flex justify-between pb-4">
+              <h2 className="flex items-center gap-2">
+                <span className="font-semibold ">Notifications</span>
+                {hasNotification && (
+                  <b className="rounded-md  bg-blue-800 p-0.5 px-2 text-sm text-stone-50">
+                    {numNotifications}
+                  </b>
+                )}
+              </h2>
               {hasNotification && (
-                <b className="text-sm  p-0.5 px-2 rounded-md text-stone-50 bg-blue-800">
-                  {numNotifications}
-                </b>
+                <button className="hover:underline" onClick={markAllRead}>
+                  Mark all as read
+                </button>
               )}
-            </h2>
-            {hasNotification && (
-              <button className="hover:underline" onClick={markAllRead}>
-                Mark all as read
-              </button>
-            )}
-          </div>
-          <ul className="flex flex-col gap-2">
-            {notifications.map((not) => (
-              <li
-                onMouseEnter={() => markReadWithHover(not.id)}
-                key={not.id}
-                className={`flex px-4 cursor-pointer py-2 rounded-lg gap-4 items-center ${
-                  not.isReaded ? "" : "bg-slate-300"
-                } `}
-              >
-                <img src={not.notification.img} className="w-16 rounded-full" />
-                <div>
-                  <div className="">
-                    <p className="text-lg font-semibold">
-                      {not.notification.name}
-                    </p>
-                    <p className="text-sm text-stone-600 tracking-wide">
-                      {not.notification.title}
-                    </p>
-                  </div>
-                  <time>{not.notification.when}</time>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </Modal>
-      )}
-    </>
-  );
-}
-
-type ModalType = { children: ReactNode; onClose: () => void };
-function Modal({ children, onClose }: ModalType) {
-  return (
-    <>
-      <div
-        onClick={onClose}
-        className="w-full min-h-screen bg-stone-900/60 fixed top-0 left-0"
-      />
-      <div className="bg-stone-100 rounded-xl px-4 py-6 fixed top-20 z-10 left-[50%] -translate-x-[50%] border-blue-700 p-4 max-w-xl w-full">
-        {children}
-      </div>
-    </>
+            </header>
+            <ul className="flex flex-col gap-2">
+              {notifications.map((not) => (
+                <NotificationItem
+                  notification={not}
+                  key={not.id}
+                  onMarkAsRead={handleMarkReadWithHover}
+                />
+              ))}
+            </ul>
+          </Modal>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
