@@ -44,6 +44,7 @@ import {
   HiOutlineStar,
   HiOutlineTicket,
 } from "react-icons/hi2";
+import { SiAuth0 } from "react-icons/si";
 
 export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   {
@@ -161,4 +162,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   },
   { id: "map-interact", text: "Map Interact", icon: <CiMap /> },
   { id: "notifications-demo", text: "Notifications", icon: <BiNotification /> },
+  { id: "demo-auth", text: "Demo Auth", icon: <SiAuth0 /> },
 ];

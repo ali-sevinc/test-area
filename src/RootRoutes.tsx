@@ -111,6 +111,17 @@ const Map = lazy(() => import("./components/map-interact/Map"));
 const Notifications = lazy(
   () => import("./components/notifications/Notifications"),
 );
+const AuthUserProvider = lazy(
+  () => import("./components/demo-auth/UserContext"),
+);
+const AuthRootRoute = lazy(() => import("./components/demo-auth/RootRoute"));
+const AuthLanding = lazy(() => import("./components/demo-auth/Landing"));
+const AuthProtectedRoutes = lazy(
+  () => import("./components/demo-auth/ProtectedRoutes"),
+);
+const AuthProducts = lazy(() => import("./components/demo-auth/Produtcs"));
+const AuthLogin = lazy(() => import("./components/demo-auth/Login"));
+const AuthError = lazy(() => import("./components/demo-auth/Error"));
 
 //**************
 const router = createBrowserRouter([
@@ -183,6 +194,25 @@ const router = createBrowserRouter([
   { path: "/demo-card-screen", element: <CardScreen /> },
   { path: "/map-interact", element: <Map /> },
   { path: "/notifications-demo", element: <Notifications /> },
+  {
+    element: <AuthRootRoute />,
+    errorElement: <AuthError />,
+    children: [
+      {
+        path: "/demo-auth",
+        element: <AuthProtectedRoutes />,
+        children: [
+          {
+            index: true,
+            element: <AuthLanding />,
+            errorElement: <AuthError />,
+          },
+          { path: "/demo-auth/products", element: <AuthProducts /> },
+        ],
+      },
+      { path: "/demo-auth/login", element: <AuthLogin /> },
+    ],
+  },
 ]);
 
 ///error boundary
@@ -199,9 +229,11 @@ export default function RootRoutes() {
       <SearchProvider>
         <UIProvider>
           <ProductProvider>
-            <Suspense fallback={<Loader />}>
-              <RouterProvider router={router} />
-            </Suspense>
+            <AuthUserProvider>
+              <Suspense fallback={<Loader />}>
+                <RouterProvider router={router} />
+              </Suspense>
+            </AuthUserProvider>
           </ProductProvider>
         </UIProvider>
       </SearchProvider>
