@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
+async function fakeDelay() {
+  return new Promise((resolve) => setTimeout(resolve, 1500));
+}
+
 const DICES = [
   {
     id: 4,
@@ -49,35 +53,43 @@ export default function Dice() {
   const [selectedDices, setSelectedDices] = useState<SelectedDice[]>([]);
   const [bonus, setBonus] = useState(0);
 
-  function handleSelectDices(dice: { src: string; max: number }) {
+  const [animating, setAnimating] = useState(false);
+
+  async function handleSelectDices(dice: { src: string; max: number }) {
     if (selectedDices.length >= 3) return;
+    setAnimating(true);
     const newDice = { ...dice, id: Math.random(), roll: rollDice(dice.max) };
     setSelectedDices((cur) => [...cur, newDice]);
+    await fakeDelay();
+    setAnimating(false);
   }
 
   function handleRemoveDice(id: number) {
     setSelectedDices((cur) => cur.filter((dice) => dice.id !== id));
   }
 
-  function handleRoll() {
+  async function handleRoll() {
     if (!selectedDices.length) return;
+    setAnimating(true);
     setSelectedDices((cur) =>
       cur.map((dice) => ({
         ...dice,
         roll: rollDice(dice.max),
-      }))
+      })),
     );
+    await fakeDelay();
+    setAnimating(false);
   }
 
   const totalRolls = selectedDices.reduce(
     (cur, dice) => cur + dice.roll,
-    bonus
+    bonus,
   );
 
   return (
-    <div className="w-[48rem] mt-8 mx-auto bg-stone-700 h-[32rem] border-2 border-stone-800">
-      <h1 className="text-2xl text-stone-100 text-center py-1">Roll dice</h1>
-      <div className="w-full h-4/6 bg-stone-100 flex items-center justify-center relative">
+    <div className="mx-auto mt-8 h-[32rem] w-[48rem] border-2 border-stone-800 bg-stone-700">
+      <h1 className="py-1 text-center text-2xl text-stone-100">Roll dice</h1>
+      <div className="relative flex h-4/6 w-full items-center justify-center bg-stone-100">
         <AnimatePresence>
           {!selectedDices.length && (
             <motion.p
@@ -100,19 +112,23 @@ export default function Dice() {
               key={dice.id}
               className="relative"
             >
-              <img src={dice.src} alt={dice.max + " sided dice"} />
-              <div className="absolute inset-0 text-4xl top-[50%] -translate-y-6 text-stone-100 font-bold">
-                {dice.roll}
+              <img
+                src={dice.src}
+                alt={dice.max + " sided dice"}
+                className={`${animating ? "animate-spin ease-in" : ""}`}
+              />
+              <div className="absolute inset-0 top-[50%] -translate-y-6 text-4xl font-bold text-stone-100">
+                {!animating && dice.roll}
               </div>
             </motion.button>
           ))}
         </AnimatePresence>
-        <p className="absolute bottom-4 text-3xl font-semibold right-8">
+        <p className="absolute bottom-4 right-8 text-3xl font-semibold">
           <span>Total: </span>
-          <span>{totalRolls}</span>
+          {animating ? "0" : <span>{totalRolls}</span>}
         </p>
       </div>
-      <div className="flex justify-center items-center gap-2 mt-4">
+      <div className="mt-4 flex items-center justify-center gap-2">
         {DICES.map((dice) => (
           <button
             key={dice.id}
@@ -126,17 +142,17 @@ export default function Dice() {
           </button>
         ))}
       </div>
-      <div className="flex justify-center items-center gap-4 mt-4">
+      <div className="mt-4 flex items-center justify-center gap-4">
         <button
           onClick={handleRoll}
-          className="bg-sky-500 px-4 py-1 text-xl rounded-lg text-stone-100 hover:bg-sky-600"
+          className="rounded-lg bg-sky-500 px-4 py-1 text-xl text-stone-100 hover:bg-sky-600"
         >
           Roll
         </button>
         <p>
           <label
             htmlFor="bonus-handicap"
-            className="text-stone-100 font-semibold"
+            className="font-semibold text-stone-100"
           >
             B/H(+/-):{" "}
           </label>
