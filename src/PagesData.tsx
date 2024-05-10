@@ -21,6 +21,7 @@ import {
   HiOutlineAcademicCap,
   HiOutlineBanknotes,
   HiOutlineBars2,
+  HiOutlineBookOpen,
   HiOutlineBriefcase,
   HiOutlineBuildingOffice,
   HiOutlineCake,
@@ -163,4 +164,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   { id: "map-interact", text: "Map Interact", icon: <CiMap /> },
   { id: "notifications-demo", text: "Notifications", icon: <BiNotification /> },
   { id: "demo-auth", text: "Demo Auth", icon: <SiAuth0 /> },
+  { id: "dictionary", text: "Dictionary", icon: <HiOutlineBookOpen /> },
 ];

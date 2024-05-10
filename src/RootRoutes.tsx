@@ -122,7 +122,10 @@ const AuthProtectedRoutes = lazy(
 const AuthProducts = lazy(() => import("./components/demo-auth/Produtcs"));
 const AuthLogin = lazy(() => import("./components/demo-auth/Login"));
 const AuthError = lazy(() => import("./components/demo-auth/Error"));
-
+///
+const Dictionary = lazy(() => import("./components/dictionary/Dictionary.tsx"));
+import DictionaryThemeProvider from "./components/dictionary/DictionaryThemeContext";
+///
 //**************
 const router = createBrowserRouter([
   {
@@ -213,6 +216,7 @@ const router = createBrowserRouter([
       { path: "/demo-auth/login", element: <AuthLogin /> },
     ],
   },
+  { path: "/dictionary", element: <Dictionary /> },
 ]);
 
 ///error boundary
@@ -230,9 +234,11 @@ export default function RootRoutes() {
         <UIProvider>
           <ProductProvider>
             <AuthUserProvider>
-              <Suspense fallback={<Loader />}>
-                <RouterProvider router={router} />
-              </Suspense>
+              <DictionaryThemeProvider>
+                <Suspense fallback={<Loader />}>
+                  <RouterProvider router={router} />
+                </Suspense>
+              </DictionaryThemeProvider>
             </AuthUserProvider>
           </ProductProvider>
         </UIProvider>

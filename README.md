@@ -47,3 +47,4 @@
 - Interact with the Map
 - Notifications
 - Authentication Demo
+- Dictionary
