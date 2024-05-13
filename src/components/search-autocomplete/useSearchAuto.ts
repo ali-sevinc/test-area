@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-type UserType = {
+export type UserType = {
   id: number;
   firstName: string;
   lastName: string;
   maidenName: string;
   age: number;
+  image: string;
 };
 export function useSearchAuto() {
   const [users, setUser] = useState<string[]>([]);

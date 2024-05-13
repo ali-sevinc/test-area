@@ -1,0 +1,18 @@
+.results {
+  max-width: 360px;
+  margin: 1rem auto;
+}
+
+.results li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 8px 0;
+  gap: 1rem;
+}
+.results img {
+  width: 64px;
+  border-radius: 50%;
+  border: 2px solid black;
+  padding: 4px;
+}
