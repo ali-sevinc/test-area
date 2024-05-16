@@ -21,7 +21,7 @@ export default function TextItem({
 }: Props) {
   const [expanded, setExpanded] = useState(isExpanded);
   return (
-    <div className="border w-1/2 mx-auto px-4 py-8 shadow-xl">
+    <div className="mx-auto w-1/2 border px-4 py-8 shadow-xl">
       <p className="inline">{expanded ? text : textSmaller(text, maxLetter)}</p>
       <button
         style={{ color: color }}

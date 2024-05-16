@@ -9,17 +9,9 @@ function Flags() {
     useFeatureContext();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        textAlign: "center",
-        width: "480px",
-        margin: "0 auto",
-      }}
-    >
+    <div className="mx-auto flex max-w-xl flex-col text-center">
       {showCCPMenu && (
-        <>
+        <div className="bg-zinc-200 px-4 py-2 text-zinc-900">
           <Menus>
             <Menus.Toggle id="featured-1">Open Menu 1</Menus.Toggle>
             <Menus.Menu id="featured-1">
@@ -34,7 +26,7 @@ function Flags() {
               <Menus.Item>Item-3</Menus.Item>
             </Menus.Menu>
           </Menus>
-        </>
+        </div>
       )}
 
       {showQrcode && (

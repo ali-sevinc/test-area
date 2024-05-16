@@ -1,6 +1,8 @@
 import { ChangeEvent, useRef, useState } from "react";
 import { HiOutlineTrash } from "react-icons/hi2";
+
 import Header from "./Header";
+
 import { useNoteContext } from "./NoteContext";
 import { motion } from "framer-motion";
 
@@ -18,7 +20,7 @@ export default function Note() {
 
     const updatedNotes = [...notes];
     const draggedIndex = updatedNotes.findIndex(
-      (note) => note.id === draggedItem.id
+      (note) => note.id === draggedItem.id,
     );
     if (index === draggedIndex) return;
 
@@ -45,18 +47,18 @@ export default function Note() {
   const filteredNotes = notes.filter((note) =>
     JSON.stringify(note)
       .toLocaleLowerCase()
-      .includes(searchTerm.toLocaleLowerCase())
+      .includes(searchTerm.toLocaleLowerCase()),
   );
 
   return (
-    <div className="max-w-6xl lg:mx-auto mx-4 flex flex-col gap-4">
+    <div className="mx-4 flex max-w-6xl flex-col gap-4 lg:mx-auto">
       <Header />
       <main className="flex flex-col gap-8">
         <section>
           <input
             onChange={handleSearch}
             type="search"
-            className="w-full border border-stone-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 text-lg"
+            className="w-full rounded-lg border border-stone-600 px-4 py-2 text-lg focus:outline-none focus:ring-2"
             placeholder="🔍 Type to search..."
           />
         </section>
@@ -65,7 +67,7 @@ export default function Note() {
             <p className="text-center text-lg ">No note found.</p>
           )}
           {filteredNotes.length > 0 && (
-            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {filteredNotes.map((note, index) => (
                 <motion.li
                   layout
@@ -73,7 +75,7 @@ export default function Note() {
                   key={note.id}
                   className={`${
                     onHoverIndex === index ? "bg-sky-300" : "bg-yellow-300"
-                  } px-4 py-3 cursor-pointer rounded-xl min-h-[12rem] flex flex-col justify-between`}
+                  } flex min-h-[12rem] cursor-pointer flex-col justify-between rounded-xl px-4 py-3`}
                   onDragStart={() => setDraggedItem(note)}
                   onDragOver={(e) => {
                     e.preventDefault();

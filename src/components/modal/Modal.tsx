@@ -1,5 +1,7 @@
 import { ReactNode, useEffect, useRef } from "react";
 
+import { motion } from "framer-motion";
+
 import styles from "./Modal.module.css";
 import { createPortal } from "react-dom";
 import { HiOutlineX } from "react-icons/hi";
@@ -18,16 +20,23 @@ export default function Modal({ children, isOpen, onClose }: PropsType) {
         ref.current.close();
       }
     },
-    [isOpen]
+    [isOpen],
   );
 
   return createPortal(
-    <dialog className={styles.modal} ref={ref} onClose={onClose}>
+    <motion.dialog
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -100, opacity: 0 }}
+      className={styles.modal}
+      ref={ref}
+      onClose={onClose}
+    >
       {children}
       <button onClick={onClose} className={styles.close}>
         <HiOutlineX />
       </button>
-    </dialog>,
-    document.body
+    </motion.dialog>,
+    document.body,
   );
 }

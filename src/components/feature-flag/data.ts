@@ -1,7 +1,7 @@
 const feature = {
   showTheme: true,
-  showTicTacToe: true,
-  showQrcode: false,
+  showTicTacToe: false,
+  showQrcode: true,
   showCCPMenu: true,
 };
 
