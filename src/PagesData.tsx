@@ -25,6 +25,7 @@ import {
   HiOutlineBriefcase,
   HiOutlineBuildingOffice,
   HiOutlineCake,
+  HiOutlineCalculator,
   HiOutlineCircleStack,
   HiOutlineCloud,
   HiOutlineCommandLine,
@@ -165,4 +166,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   { id: "notifications-demo", text: "Notifications", icon: <BiNotification /> },
   { id: "demo-auth", text: "Demo Auth", icon: <SiAuth0 /> },
   { id: "dictionary", text: "Dictionary", icon: <HiOutlineBookOpen /> },
+  { id: "calculator", text: "Calculator", icon: <HiOutlineCalculator /> },
 ];

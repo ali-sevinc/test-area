@@ -48,3 +48,4 @@
 - Notifications
 - Authentication Demo
 - Dictionary
+- Calculator
