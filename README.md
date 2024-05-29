@@ -49,3 +49,4 @@
 - Authentication Demo
 - Dictionary
 - Calculator
+- Zoom Image

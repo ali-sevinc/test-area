@@ -127,6 +127,9 @@ const Dictionary = lazy(() => import("./components/dictionary/Dictionary.tsx"));
 import DictionaryThemeProvider from "./components/dictionary/DictionaryThemeContext";
 ///
 const Calculator = lazy(() => import("./components/calculator/Calculator"));
+const ZoomImage = lazy(
+  () => import("./components/zoom-slided-image/ZoomImage"),
+);
 
 //**************
 const router = createBrowserRouter([
@@ -220,6 +223,7 @@ const router = createBrowserRouter([
   },
   { path: "/dictionary", element: <Dictionary /> },
   { path: "/calculator", element: <Calculator /> },
+  { path: "/zoom-image", element: <ZoomImage /> },
 ]);
 
 ///error boundary
