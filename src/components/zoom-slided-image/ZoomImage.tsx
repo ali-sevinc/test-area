@@ -12,7 +12,10 @@ export default function ZoomImage() {
 
   useEffect(function () {
     async function getProducts() {
-      const res = await fetch("https://dummyjson.com/products?limit=10");
+      const skip = Math.floor(Math.random() * 90);
+      const res = await fetch(
+        `https://dummyjson.com/products?limit=10&skip=${skip}`,
+      );
       const data = await res.json();
       setProducts(data.products);
     }

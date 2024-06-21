@@ -15,7 +15,7 @@ export default function Categories() {
       setIsError(false);
       setIsLoading(true);
       try {
-        const res = await fetch("https://dummyjson.com/products/categories");
+        const res = await fetch("https://dummyjson.com/products/category-list");
         if (!res.ok) throw new Error("An error occured.");
         const data = await res.json();
         setCategories(data);
