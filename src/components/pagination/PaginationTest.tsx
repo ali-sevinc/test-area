@@ -22,15 +22,20 @@ export default function PaginationTest() {
     products: [],
   });
 
-  useEffect(function () {
-    async function fetchProducts() {
-      const res = await fetch(`https://dummyjson.com/products?limit=100`);
-      const resdata = await res.json();
-      setData(resdata);
-      // console.log(resdata);
-    }
-    fetchProducts();
-  }, []);
+  useEffect(
+    function () {
+      async function fetchProducts() {
+        const res = await fetch(
+          `https://dummyjson.com/products?limit=10&skip=${page * ITEM_PER_PAGE}`,
+        );
+        const resdata = await res.json();
+        setData(resdata);
+        // console.log(resdata);
+      }
+      fetchProducts();
+    },
+    [page],
+  );
 
   function handleIncrementPage() {
     setPage((cur) => cur + 1);
@@ -42,10 +47,11 @@ export default function PaginationTest() {
     setPage(pageNum);
   }
 
-  const products = data.products.filter(
-    (_, index) =>
-      index >= (page - 1) * ITEM_PER_PAGE && index < page * ITEM_PER_PAGE,
-  );
+  // const products = data.products.filter(
+  //   (_, index) =>
+  //     index >= (page - 1) * ITEM_PER_PAGE && index < page * ITEM_PER_PAGE,
+  // );
+  const products = data.products;
 
   return (
     <div className={styles.container}>

@@ -50,3 +50,5 @@
 - Dictionary
 - Calculator
 - Zoom Image
+
+[Deploy](https://react-test-area.netlify.app/)
