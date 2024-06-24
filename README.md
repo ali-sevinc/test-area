@@ -50,5 +50,6 @@
 - Dictionary
 - Calculator
 - Zoom Image
+- CCP Table
 
 [Deploy](https://react-test-area.netlify.app/)

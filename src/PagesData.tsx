@@ -169,4 +169,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   { id: "dictionary", text: "Dictionary", icon: <HiOutlineBookOpen /> },
   { id: "calculator", text: "Calculator", icon: <HiOutlineCalculator /> },
   { id: "zoom-image", text: "Zoom Slided Image", icon: <HiOutlineZoomIn /> },
+  { id: "ccp-table", text: "Table With CCP", icon: <HiOutlineTable /> },
 ];
