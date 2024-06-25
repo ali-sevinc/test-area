@@ -14,6 +14,7 @@ export default function SearchAutoComplete() {
   const filteredUsers = users?.filter((item) =>
     item.toLocaleLowerCase().includes(searchParam.toLocaleLowerCase()),
   );
+  console.log(users);
 
   function handleSetSuggestion(value: string) {
     setSearchParam(value);

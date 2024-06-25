@@ -61,23 +61,36 @@ export default function PaginationTest() {
           <HiOutlineChevronDoubleLeft />
           Previous
         </button>
+        <button disabled={page <= 1} onClick={() => setPage(1)}>
+          First
+        </button>
 
         <ol className={styles.clickToPage}>
           {Array.from({ length: data.total / ITEM_PER_PAGE }, (_, i) => i).map(
-            (j) => (
-              <button
-                onClick={() => handleClickToPageNum(j + 1)}
-                disabled={j === page - 1}
-                key={j}
-              >
-                {j + 1}
-              </button>
-            ),
+            (j) => {
+              if (page - 5 < j && j < page + 3) {
+                return (
+                  <button
+                    onClick={() => handleClickToPageNum(j + 1)}
+                    disabled={j === page - 1}
+                    key={j}
+                  >
+                    {j + 1}
+                  </button>
+                );
+              }
+            },
           )}
         </ol>
 
         <button
-          disabled={page >= data.total / ITEM_PER_PAGE}
+          disabled={page >= Math.floor(data.total / ITEM_PER_PAGE)}
+          onClick={() => setPage(Math.floor(data.total / ITEM_PER_PAGE))}
+        >
+          Last
+        </button>
+        <button
+          disabled={page >= Math.floor(data.total / ITEM_PER_PAGE)}
           onClick={handleIncrementPage}
         >
           Next

@@ -17,7 +17,7 @@ export function useSearchAuto() {
       try {
         setIsLoading(true);
         setError(false);
-        const res = await fetch("https://dummyjson.com/users");
+        const res = await fetch("https://dummyjson.com/users?limit=208");
         if (!res.ok) throw new Error("Something went wrong.");
 
         const data = await res.json();
