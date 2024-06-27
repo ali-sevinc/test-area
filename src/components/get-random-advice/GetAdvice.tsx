@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaQuoteRight } from "react-icons/fa";
 import { GiShirtButton } from "react-icons/gi";
 
 type AdviceType = { id: number; advice: string };
@@ -52,6 +53,12 @@ export default function GetAdvice() {
           </h2>
         )}
         {loading && <p>Loading....</p>}
+
+        <div className="flex w-full items-center justify-between gap-2">
+          <div className="h-0.5 w-full bg-zinc-50" />
+          <FaQuoteRight className="text-2xl" />
+          <div className="h-0.5 w-full bg-zinc-50" />
+        </div>
         <button onClick={handleGetAdvice} className="text-4xl">
           <GiShirtButton />
         </button>
