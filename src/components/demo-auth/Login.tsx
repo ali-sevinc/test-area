@@ -6,8 +6,8 @@ const EXPIRATION_MINS = 60;
 
 export default function Login() {
   const [userCredentials, setUserCredentials] = useState({
-    userName: "kminchelle",
-    password: "0lelplR",
+    userName: "emilys",
+    password: "emilyspass",
   });
   const [authError, setAuthError] = useState<string>("");
   const { isAuth } = useUser();

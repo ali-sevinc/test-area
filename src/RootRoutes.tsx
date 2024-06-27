@@ -136,6 +136,9 @@ const ZoomImage = lazy(
   () => import("./components/zoom-slided-image/ZoomImage"),
 );
 const CCPTable = lazy(() => import("./components/ccp-table/CCPTable"));
+const GetAdvice = lazy(
+  () => import("./components/get-random-advice/GetAdvice"),
+);
 
 //**************
 const router = createBrowserRouter([
@@ -239,6 +242,7 @@ const router = createBrowserRouter([
       { path: "/calculator", element: <Calculator /> },
       { path: "/zoom-image", element: <ZoomImage /> },
       { path: "/ccp-table", element: <CCPTable /> },
+      { path: "/get-random-advice", element: <GetAdvice /> },
     ],
   },
 ]);
