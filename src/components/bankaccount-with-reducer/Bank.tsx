@@ -6,6 +6,7 @@ type InitialType = {
   user: string;
   balance: number;
   loan: number;
+  error: string;
 };
 type ActionType = {
   type:
@@ -14,13 +15,15 @@ type ActionType = {
     | "requestloan"
     | "payloan"
     | "withdraw"
-    | "deposit";
-  payload?: { amount?: number; name?: string };
+    | "deposit"
+    | "error";
+  payload?: { amount?: number; name?: string; error?: string };
 };
 const initialState: InitialType = {
   user: "",
   balance: 0,
   loan: 0,
+  error: "",
 };
 
 function reducer(state: InitialType, action: ActionType) {
@@ -29,6 +32,7 @@ function reducer(state: InitialType, action: ActionType) {
       ...state,
       user: action.payload?.name,
       balance: 500,
+      error: "",
     } as InitialType;
   }
   if (action.type === "close-account") {
@@ -37,6 +41,7 @@ function reducer(state: InitialType, action: ActionType) {
       ...state,
       user: "",
       balance: 0,
+      error: "",
     } as InitialType;
   }
   if (action.type === "requestloan") {
@@ -45,23 +50,37 @@ function reducer(state: InitialType, action: ActionType) {
       ...state,
       loan: 10000,
       balance: state.balance + 10000,
+      error: "",
     } as InitialType;
   }
   if (action.type === "payloan") {
     if (state.loan === 0) return state;
 
-    return { ...state, loan: 0, balance: state.balance - 10000 } as InitialType;
+    return {
+      ...state,
+      loan: 0,
+      balance: state.balance - 10000,
+      error: "",
+    } as InitialType;
   }
   if (action.type === "withdraw") {
     return {
       ...state,
       balance: state.balance - (action.payload?.amount ?? 0),
+      error: "",
     } as InitialType;
   }
   if (action.type === "deposit") {
     return {
       ...state,
       balance: state.balance + (action.payload?.amount ?? 0),
+      error: "",
+    } as InitialType;
+  }
+  if (action.type === "error") {
+    return {
+      ...state,
+      error: action.payload?.error,
     } as InitialType;
   }
 
@@ -69,7 +88,10 @@ function reducer(state: InitialType, action: ActionType) {
 }
 
 export default function Bank() {
-  const [{ balance, loan, user }, dispatch] = useReducer(reducer, initialState);
+  const [{ balance, loan, user, error }, dispatch] = useReducer(
+    reducer,
+    initialState,
+  );
 
   const depositRef = useRef<HTMLInputElement>(null);
   const withdrawltRef = useRef<HTMLInputElement>(null);
@@ -79,9 +101,12 @@ export default function Bank() {
     const form = new FormData(event.currentTarget as HTMLFormElement);
 
     const name = form.get("user") as string;
-    if (!name) return;
+    if (!name) {
+      dispatch({ type: "error", payload: { error: "Account connot created" } });
+      return;
+    }
 
-    dispatch({ type: "open-account", payload: { name } });
+    dispatch({ type: "open-account", payload: { name, error: "" } });
   }
 
   return (
@@ -102,7 +127,11 @@ export default function Bank() {
                 className="rounded-xl px-4 py-2 font-semibold text-stone-800"
               />
             </p>
+
             <Button onClick={() => {}}>Open Account</Button>
+            {error && (
+              <p className="text-center text-sm text-red-400">{error}</p>
+            )}
           </form>
         )}
         {user !== "" && (
@@ -118,12 +147,19 @@ export default function Bank() {
             <div className="mt-12 flex flex-col gap-8">
               <InputGrop
                 ref={depositRef}
+                error={error === "deposit"}
                 name="deposit"
                 placeholder="Deposit..."
                 onClick={() => {
                   const deposit = depositRef.current?.value;
-                  if (!deposit) return;
-                  dispatch({ type: "deposit", payload: { amount: +deposit } });
+                  if (!deposit) {
+                    dispatch({ type: "error", payload: { error: "deposit" } });
+                    return;
+                  }
+                  dispatch({
+                    type: "deposit",
+                    payload: { amount: +deposit, error: "" },
+                  });
                   depositRef.current.value = "";
                 }}
               >
@@ -132,13 +168,20 @@ export default function Bank() {
 
               <InputGrop
                 ref={withdrawltRef}
+                error={error === "withdrawl"}
                 name="withdrawl"
                 onClick={() => {
                   const withdrawl = withdrawltRef.current?.value;
-                  if (!withdrawl) return;
+                  if (!withdrawl) {
+                    dispatch({
+                      type: "error",
+                      payload: { error: "withdrawl" },
+                    });
+                    return;
+                  }
                   dispatch({
                     type: "withdraw",
-                    payload: { amount: +withdrawl },
+                    payload: { amount: +withdrawl, error: "" },
                   });
                   withdrawltRef.current.value = "";
                 }}
