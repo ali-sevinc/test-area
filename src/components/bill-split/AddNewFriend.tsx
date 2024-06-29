@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import Button from "./Button";
 
 type FriendType = { id: string; name: string; balance: number; image: string };
@@ -8,12 +8,18 @@ export default function AddNewFriend({
 }: {
   onAddFriend: (friend: FriendType) => void;
 }) {
+  const [error, setError] = useState(false);
+
   function handleAddFriend(event: FormEvent) {
     event.preventDefault();
+    setError(false);
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
     const name = formData.get("name") as string;
-    if (!name.trim().length) return;
+    if (!name.trim().length) {
+      setError(true);
+      return;
+    }
 
     const id = crypto.randomUUID();
     const friend: FriendType = {
@@ -30,7 +36,11 @@ export default function AddNewFriend({
     <form onSubmit={handleAddFriend} className="mt-4 flex flex-col gap-4 px-8">
       <div className="flex justify-between ">
         <label htmlFor="name">Name</label>
-        <input id="name" name="name" />
+        <input
+          id="name"
+          name="name"
+          className={error ? "border border-red-500" : ""}
+        />
       </div>
       <div className="flex justify-between ">
         <label htmlFor="image">Image</label>

@@ -41,36 +41,36 @@ export default function CCPTable() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br pb-8 from-emerald-500 to-emerald-900 pt-12 flex flex-col gap-4">
-      <h1 className="mb-12 text-center text-lg md:text-3xl text-emerald-50">
+    <div className="flex min-h-screen flex-col gap-4 bg-gradient-to-br from-emerald-500 to-emerald-900 pb-8 pt-12">
+      <h1 className="mb-12 text-center text-lg text-emerald-50 md:text-3xl">
         Table With CCP&RenderProps
       </h1>
       {isLoading && (
-        <p className="text-center text-emerald-50 text-2xl animate-pulse">
+        <p className="animate-pulse text-center text-2xl text-emerald-50">
           Loading....
         </p>
       )}
       {isError && (
-        <p className="text-red-300 text-xl text-center">
+        <p className="text-center text-xl text-red-300">
           Failed to fetching tables data.
         </p>
       )}
 
       {!isLoading && !isError && (
         <>
-          <Table columns="4rem 1.6rem 1fr 4rem">
+          <Table columns="4rem 1.6rem 1fr 6rem">
             <Table.Header>
               <div />
-              <div className="italic text-lg">Id</div>
-              <div className="italic text-lg">Name</div>
-              <div className="italic text-lg">Price</div>
+              <div className="text-lg italic">Id</div>
+              <div className="text-lg italic">Name</div>
+              <div className="text-lg italic">Price</div>
             </Table.Header>
             <Table.Body
               data={data.products}
               render={(product) => (
                 <Table.Row key={product.id}>
                   <img
-                    className="w-9 h-9 md:w-[3.2rem] md:h-[3.2rem] rounded-full "
+                    className="h-9 w-9 rounded-full md:h-[3.2rem] md:w-[3.2rem] "
                     src={product.thumbnail}
                   />
                   <p>{product.id}</p>

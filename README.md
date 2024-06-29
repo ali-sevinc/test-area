@@ -51,5 +51,6 @@
 - Calculator
 - Zoom Image
 - CCP Table
+- Random Advice
 
 [Deploy](https://react-test-area.netlify.app/)
