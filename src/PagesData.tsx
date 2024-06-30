@@ -1,7 +1,7 @@
 import { AiOutlineCreditCard } from "react-icons/ai";
 import { BiNotification } from "react-icons/bi";
 import { CiMap } from "react-icons/ci";
-import { FaQuestion } from "react-icons/fa";
+import { FaQuestion, FaRegBuilding } from "react-icons/fa";
 import {
   HiOutlineAnnotation,
   HiOutlineArrowCircleRight,
@@ -172,4 +172,9 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   { id: "zoom-image", text: "Zoom Slided Image", icon: <HiOutlineZoomIn /> },
   { id: "ccp-table", text: "Table With CCP", icon: <HiOutlineTable /> },
   { id: "get-random-advice", text: "Get Random Advice", icon: <FaQuestion /> },
+  {
+    id: "mortgage-calculator",
+    text: "Mortgage Calculator",
+    icon: <FaRegBuilding />,
+  },
 ];

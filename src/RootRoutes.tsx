@@ -139,6 +139,9 @@ const CCPTable = lazy(() => import("./components/ccp-table/CCPTable"));
 const GetAdvice = lazy(
   () => import("./components/get-random-advice/GetAdvice"),
 );
+const Mortgage = lazy(
+  () => import("./components/mortgate-calculator/Mortgate"),
+);
 
 //**************
 const router = createBrowserRouter([
@@ -243,6 +246,7 @@ const router = createBrowserRouter([
       { path: "/zoom-image", element: <ZoomImage /> },
       { path: "/ccp-table", element: <CCPTable /> },
       { path: "/get-random-advice", element: <GetAdvice /> },
+      { path: "mortgage-calculator", element: <Mortgage /> },
     ],
   },
 ]);

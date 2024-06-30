@@ -52,5 +52,6 @@
 - Zoom Image
 - CCP Table
 - Random Advice
+- Mortgage Calculator
 
 [Deploy](https://react-test-area.netlify.app/)
