@@ -34,91 +34,112 @@ function handleFormat(value: number) {
 }
 
 export default function Mortgate() {
-  const [amount, setAmount] = useState(0);
-  const [term, setTerm] = useState(0);
-  const [rate, setRate] = useState(0);
+  const [amount, setAmount] = useState({ value: 0, error: false });
+  const [term, setTerm] = useState({ value: 0, error: false });
+  const [rate, setRate] = useState({ value: 0, error: false });
+
   const [repay, setRepay] = useState(0);
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
+
+    if (!amount.value || isNaN(amount.value)) {
+      setAmount((prev) => ({ ...prev, error: true }));
+    }
+    if (!term.value || isNaN(term.value)) {
+      setTerm((prev) => ({ ...prev, error: true }));
+    }
+    if (!rate.value || isNaN(rate.value)) {
+      setRate((prev) => ({ ...prev, error: true }));
+    }
+
     if (
-      !amount ||
-      isNaN(amount) ||
-      !term ||
-      isNaN(term) ||
-      !rate ||
-      isNaN(rate)
+      !amount.value ||
+      isNaN(amount.value) ||
+      !term.value ||
+      isNaN(term.value) ||
+      !rate.value ||
+      isNaN(rate.value)
     )
       return;
 
     const monthlyPayment = calculateMortgate({
-      amount,
-      interestRate: rate / 100,
-      year: term,
+      amount: amount.value,
+      interestRate: rate.value / 100,
+      year: term.value,
     });
 
     setRepay(monthlyPayment);
   }
 
   function handleReset() {
-    setAmount(0);
-    setRate(0);
-    setTerm(0);
+    setAmount({ value: 0, error: false });
+    setRate({ value: 0, error: false });
+    setTerm({ value: 0, error: false });
     setRepay(0);
   }
 
-  const totalRepay = repay * 12 * term;
+  const totalRepay = repay * 12 * term.value;
 
   return (
-    <div className="min-h-screen bg-blue-200 grid items-center justify-center h-80">
-      <div className="max-w-2xl grid sm:grid-cols-2 ">
+    <div className="grid h-80 min-h-screen items-center justify-center bg-blue-200">
+      <div className="grid max-w-2xl bg-blue-50 sm:grid-cols-2">
         <form
           onSubmit={handleSubmit}
-          className="bg-blue-50 px-4 py-2 rounded-t-xl sm:rounded-r-none sm:rounded-l-xl flex flex-col gap-4"
+          className="flex flex-col gap-4 rounded-t-xl bg-blue-50 px-4 py-2 sm:rounded-l-xl sm:rounded-r-none"
         >
-          <h2 className="text-2xl font-semibold pb-2">Mortgage Calculator</h2>
+          <h2 className="pb-2 text-2xl font-semibold">Mortgage Calculator</h2>
           <InputGroup
             icon={<FaEuroSign />}
             id="amount"
             label="Mortgage Amount"
-            setValue={(e) => setAmount(e)}
+            setValue={(e) =>
+              setAmount((prev) => ({ ...prev, value: e, error: false }))
+            }
+            error={amount.error}
           />
           <div className="flex gap-2">
             <InputGroup
               icon={<VscTerminalUbuntu />}
               id="term"
               label="Mortgage Term"
-              setValue={(e) => setTerm(e)}
+              setValue={(e) =>
+                setTerm((prev) => ({ ...prev, value: e, error: false }))
+              }
+              error={term.error}
             />
             <InputGroup
               icon={<FaPercent />}
               id="rate"
               label="Interest Year"
-              setValue={(e) => setRate(e)}
+              setValue={(e) =>
+                setRate((prev) => ({ ...prev, value: e, error: false }))
+              }
+              error={rate.error}
             />
           </div>
           <div className="flex items-center justify-center gap-4 py-4">
             <button
-              className="bg-zinc-600 text-zinc-50 px-4 py-2 rounded hover:bg-zinc-700 duration-200 font-semibold"
+              className="rounded bg-zinc-600 px-4 py-2 font-semibold text-zinc-50 duration-200 hover:bg-zinc-700"
               onClick={handleReset}
               type="reset"
             >
               Reset
             </button>
-            <button className="bg-blue-300 px-4 py-2 rounded hover:bg-blue-400 duration-200 font-semibold">
+            <button className="rounded bg-blue-300 px-4 py-2 font-semibold duration-200 hover:bg-blue-400">
               Calculate
             </button>
           </div>
         </form>
-        <div className="bg-slate-700 rounded-r-xl h-80 text-blue-50 px-4 py-2 flex flex-col items-center justify-center">
+        <div className="flex h-80 flex-col items-center justify-center rounded-b-xl rounded-tr-[5rem] bg-slate-700 px-4 py-2 text-blue-50 sm:rounded-l-none sm:rounded-r-xl sm:rounded-bl-[5rem] sm:rounded-tr-none">
           {totalRepay === 0 && (
-            <div className="flex items-center justify-center flex-col">
+            <div className="flex flex-col items-center justify-center">
               <FaCalculator className="text-[8rem]" />
               <h2 className="text-2xl font-semibold">Results shown here</h2>
             </div>
           )}
           {totalRepay > 0 && (
-            <div className="border-t-4 border-t-green-400 rounded-md flex flex-col gap-2">
+            <div className="flex flex-col gap-2 rounded-md border-t-4 border-t-green-400">
               <h2 className="text-2xl font-semibold">Your Results</h2>
               <div>
                 <p>Monthly Repayment</p>

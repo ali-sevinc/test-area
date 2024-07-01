@@ -2,14 +2,23 @@ type PropsType = {
   label: string;
   id: string;
   icon: JSX.Element;
+  error: boolean;
   setValue: (e: number) => void;
 };
-export default function InputGroup({ label, id, icon, setValue }: PropsType) {
+export default function InputGroup({
+  label,
+  id,
+  icon,
+  setValue,
+  error,
+}: PropsType) {
   return (
     <div className="group flex flex-col gap-1">
       <label htmlFor={id}>{label}</label>
-      <div className="flex border border-blue-500 rounded-sm h-full items-center group-focus-within:ring-offset-2 group-focus-within:ring-2 group-focus:ring-yellow-300 ">
-        <p className="rounded-l-sm h-full bg-blue-200 px-2 grid items-center justify-center">
+      <div
+        className={`flex h-full items-center rounded-sm border border-blue-500 group-focus-within:ring-2 group-focus-within:ring-offset-2 group-focus:ring-yellow-300 ${error ? "border-red-500" : ""}`}
+      >
+        <p className="grid h-full items-center justify-center rounded-l-sm bg-blue-200 px-2">
           {icon}
         </p>
         <input
@@ -17,7 +26,7 @@ export default function InputGroup({ label, id, icon, setValue }: PropsType) {
           step="0.01"
           id={id}
           onChange={(e) => setValue(+e.target.value)}
-          className="rounded-r focus:outline-none w-full px-2 py-1"
+          className="w-full rounded-r px-2 py-1 focus:outline-none"
         />
       </div>
     </div>
