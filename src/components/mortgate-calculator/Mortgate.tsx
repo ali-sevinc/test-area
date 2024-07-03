@@ -82,11 +82,11 @@ export default function Mortgate() {
   const totalRepay = repay * 12 * term.value;
 
   return (
-    <div className="grid h-80 min-h-screen items-center justify-center bg-blue-200">
-      <div className="grid max-w-2xl bg-blue-50 sm:grid-cols-2">
+    <div className="grid h-80 min-h-screen items-center justify-center bg-blue-200 px-2">
+      <div className="grid max-w-3xl rounded-xl bg-blue-50 md:grid-cols-2">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-4 rounded-t-xl bg-blue-50 px-4 py-2 sm:rounded-l-xl sm:rounded-r-none"
+          className="flex flex-col gap-4 rounded-t-xl bg-blue-50 px-4 py-2 sm:rounded-l-xl md:rounded-r-none"
         >
           <h2 className="pb-2 text-2xl font-semibold">Mortgage Calculator</h2>
           <InputGroup
@@ -102,7 +102,7 @@ export default function Mortgate() {
             <InputGroup
               icon={<VscTerminalUbuntu />}
               id="term"
-              label="Mortgage Term"
+              label="Mortgage Term (years)"
               setValue={(e) =>
                 setTerm((prev) => ({ ...prev, value: e, error: false }))
               }
@@ -111,7 +111,7 @@ export default function Mortgate() {
             <InputGroup
               icon={<FaPercent />}
               id="rate"
-              label="Interest Year"
+              label="Interest/Year"
               setValue={(e) =>
                 setRate((prev) => ({ ...prev, value: e, error: false }))
               }
@@ -131,7 +131,7 @@ export default function Mortgate() {
             </button>
           </div>
         </form>
-        <div className="flex h-80 flex-col items-center justify-center rounded-b-xl rounded-tr-[5rem] bg-slate-700 px-4 py-2 text-blue-50 sm:rounded-l-none sm:rounded-r-xl sm:rounded-bl-[5rem] sm:rounded-tr-none">
+        <div className="flex h-80 flex-col items-center justify-center rounded-b-xl rounded-tr-[5rem] bg-slate-700 px-4 py-2 text-blue-50 md:rounded-l-none md:rounded-r-xl md:rounded-bl-[5rem] md:rounded-tr-xl">
           {totalRepay === 0 && (
             <div className="flex flex-col items-center justify-center">
               <FaCalculator className="text-[8rem]" />

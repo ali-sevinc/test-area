@@ -14,7 +14,9 @@ export default function InputGroup({
 }: PropsType) {
   return (
     <div className="group flex flex-col gap-1">
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} className="text-sm sm:text-base">
+        {label}
+      </label>
       <div
         className={`flex h-full items-center rounded-sm border border-blue-500 group-focus-within:ring-2 group-focus-within:ring-offset-2 group-focus:ring-yellow-300 ${error ? "border-red-500" : ""}`}
       >
@@ -26,7 +28,7 @@ export default function InputGroup({
           step="0.01"
           id={id}
           onChange={(e) => setValue(+e.target.value)}
-          className="w-full rounded-r px-2 py-1 focus:outline-none"
+          className={`w-full rounded-r px-2 py-1 focus:outline-none ${error ? "bg-red-100" : ""}`}
         />
       </div>
     </div>

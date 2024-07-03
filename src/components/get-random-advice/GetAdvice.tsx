@@ -12,6 +12,7 @@ export default function GetAdvice() {
   useEffect(function () {
     async function fetchAdvice() {
       try {
+        setLoading(true);
         const res = await fetch("https://api.adviceslip.com/advice");
         const data = await res.json();
         if (!res.ok) throw new Error("Err");
@@ -27,6 +28,7 @@ export default function GetAdvice() {
 
   async function handleGetAdvice() {
     try {
+      setLoading(true);
       const res = await fetch("https://api.adviceslip.com/advice");
       const data = await res.json();
       if (!res.ok) throw new Error("Err");
@@ -59,7 +61,11 @@ export default function GetAdvice() {
           <FaQuoteRight className="text-2xl" />
           <div className="h-0.5 w-full bg-zinc-50" />
         </div>
-        <button onClick={handleGetAdvice} className="text-4xl">
+        <button
+          onClick={handleGetAdvice}
+          disabled={loading}
+          className={`text-4xl ${loading ? "animate-spin" : ""}`}
+        >
           <GiShirtButton />
         </button>
       </div>
