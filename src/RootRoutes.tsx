@@ -143,6 +143,15 @@ const Mortgage = lazy(
   () => import("./components/mortgate-calculator/Mortgate"),
 );
 
+///
+const RootAuthPage = lazy(
+  () => import("./components/form-validation/RootAuthPage"),
+);
+const AuthLandingPage = lazy(
+  () => import("./components/form-validation/AuthLanding"),
+);
+const SignUp = lazy(() => import("./components/form-validation/SignUp"));
+
 //**************
 const router = createBrowserRouter([
   {
@@ -247,6 +256,15 @@ const router = createBrowserRouter([
       { path: "/ccp-table", element: <CCPTable /> },
       { path: "/get-random-advice", element: <GetAdvice /> },
       { path: "mortgage-calculator", element: <Mortgage /> },
+      {
+        path: "/form-validations",
+        element: <RootAuthPage />,
+        children: [
+          { index: true, element: <AuthLandingPage /> },
+
+          { path: "signup", element: <SignUp /> },
+        ],
+      },
     ],
   },
 ]);

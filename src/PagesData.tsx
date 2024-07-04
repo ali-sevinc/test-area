@@ -17,6 +17,7 @@ import {
   HiOutlinePaperAirplane,
   HiOutlineSearch,
   HiOutlineTable,
+  HiOutlineUser,
   HiOutlineZoomIn,
 } from "react-icons/hi";
 import {
@@ -177,4 +178,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     text: "Mortgage Calculator",
     icon: <FaRegBuilding />,
   },
+  { id: "form-validations", text: "Form Validations", icon: <HiOutlineUser /> },
 ];

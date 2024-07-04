@@ -53,5 +53,6 @@
 - CCP Table
 - Random Advice
 - Mortgage Calculator
+- Form Validations
 
 [Deploy](https://react-test-area.netlify.app/)
