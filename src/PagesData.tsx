@@ -49,6 +49,7 @@ import {
   HiOutlineStar,
   HiOutlineTicket,
 } from "react-icons/hi2";
+import { MdSmartButton } from "react-icons/md";
 import { SiAuth0 } from "react-icons/si";
 
 export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
@@ -179,4 +180,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
     icon: <FaRegBuilding />,
   },
   { id: "form-validations", text: "Form Validations", icon: <HiOutlineUser /> },
+  { id: "custom-button", text: "Custom Button", icon: <MdSmartButton /> },
 ];

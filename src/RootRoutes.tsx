@@ -151,6 +151,7 @@ const AuthLandingPage = lazy(
   () => import("./components/form-validation/AuthLanding"),
 );
 const SignUp = lazy(() => import("./components/form-validation/SignUp"));
+const MyButton = lazy(() => import("./components/custom-button/Button.tsx"));
 
 //**************
 const router = createBrowserRouter([
@@ -265,6 +266,7 @@ const router = createBrowserRouter([
           { path: "signup", element: <SignUp /> },
         ],
       },
+      { path: "custom-button", element: <MyButton /> },
     ],
   },
 ]);
