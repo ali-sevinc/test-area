@@ -30,20 +30,37 @@ export default function MyButton() {
 
   return (
     <div className={`grid items-center gap-12 py-12  md:grid-cols-2`}>
-      <div className="text-center">
-        <Button
-          $bgColor={bgColor}
-          $boxShadow={`${boxShadow.xOfset}px ${boxShadow.yOfset}px ${boxShadow.blur}px ${boxShadow.radius}px ${boxShadow.color}`}
-          $fontSize={`${fontSize}px`}
-          $hoverColor={hoverColor}
-          $hoverStyle={hoverStyle}
-          radius={`${radius}%`}
-          $textColor={textColor}
-          $slideX={`${fontSize / 5}px`}
-          $slideY={`${fontSize / 10}px`}
-        >
-          {btnText}
-        </Button>
+      <div className="flex flex-col gap-24">
+        <div className="text-center">
+          <Button
+            radius={`${radius}%`}
+            $bgColor={bgColor}
+            $boxShadow={`${boxShadow.xOfset}px ${boxShadow.yOfset}px ${boxShadow.blur}px ${boxShadow.radius}px ${boxShadow.color}`}
+            $fontSize={`${fontSize}px`}
+            $hoverColor={hoverColor}
+            $hoverStyle={hoverStyle}
+            $textColor={textColor}
+            $slideX={`${fontSize / 5}px`}
+            $slideY={`${fontSize / 10}px`}
+          >
+            {btnText}
+          </Button>
+        </div>
+        {/* <div className="text-center">
+          <Button
+            radius="12px"
+            $bgColor="#26e6e6"
+            $boxShadow="4px 4px 5px 3px #aaa"
+            $fontSize="24px"
+            $hoverColor="#39bbbb"
+            $hoverStyle="slide"
+            $textColor="#111"
+            $slideX="5px"
+            $slideY="2px"
+          >
+            Test 1-2-3
+          </Button>
+        </div> */}
       </div>
       <form className="mx-auto flex max-w-sm flex-col gap-2">
         <fieldset className="flex flex-col gap-2 border-2 p-2">

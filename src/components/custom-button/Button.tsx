@@ -2,10 +2,10 @@ import { ButtonHTMLAttributes } from "react";
 import styled, { css } from "styled-components";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  radius: string;
   $textColor: string;
   $bgColor: string;
   $fontSize: string;
-  radius: string;
   $boxShadow: string;
   $hoverColor: string;
   $hoverStyle: "slide" | "background" | "fill";
