@@ -55,5 +55,6 @@
 - Mortgage Calculator
 - Form Validations
 - Custom Button
+- Marquee Icons
 
 [Deploy](https://react-test-area.netlify.app/)

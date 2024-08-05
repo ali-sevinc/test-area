@@ -51,6 +51,7 @@ import {
 } from "react-icons/hi2";
 import { MdSmartButton } from "react-icons/md";
 import { SiAuth0 } from "react-icons/si";
+import { TbMarquee } from "react-icons/tb";
 
 export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   {
@@ -181,4 +182,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   },
   { id: "form-validations", text: "Form Validations", icon: <HiOutlineUser /> },
   { id: "custom-button", text: "Custom Button", icon: <MdSmartButton /> },
+  { id: "marquee-panel", text: "Marquee Panel", icon: <TbMarquee /> },
 ];
