@@ -1,5 +1,6 @@
 import { AiOutlineCreditCard } from "react-icons/ai";
 import { BiNotification } from "react-icons/bi";
+import { BsCursor } from "react-icons/bs";
 import { CiMap } from "react-icons/ci";
 import { FaQuestion, FaRegBuilding } from "react-icons/fa";
 import {
@@ -183,4 +184,5 @@ export const PAGES: { id: string; text: string; icon: JSX.Element }[] = [
   { id: "form-validations", text: "Form Validations", icon: <HiOutlineUser /> },
   { id: "custom-button", text: "Custom Button", icon: <MdSmartButton /> },
   { id: "marquee-panel", text: "Marquee Panel", icon: <TbMarquee /> },
+  { id: "cursor-follower", text: "Cursor Follower", icon: <BsCursor /> },
 ];

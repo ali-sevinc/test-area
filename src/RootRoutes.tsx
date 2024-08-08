@@ -155,6 +155,9 @@ const MyButton = lazy(() => import("./components/custom-button/MyButton.tsx"));
 const MarqueePanel = lazy(
   () => import("./components/marquee-panel/MarqueePanel.tsx"),
 );
+const CursorFollower = lazy(
+  () => import("./components/cursor-follower/CursorFollower.tsx"),
+);
 
 //**************
 const router = createBrowserRouter([
@@ -271,6 +274,7 @@ const router = createBrowserRouter([
       },
       { path: "custom-button", element: <MyButton /> },
       { path: "marquee-panel", element: <MarqueePanel /> },
+      { path: "cursor-follower", element: <CursorFollower /> },
     ],
   },
 ]);
