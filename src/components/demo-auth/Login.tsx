@@ -38,8 +38,9 @@ export default function Login() {
         }),
       });
       const data = await res.json();
-      if (!res.ok || !data?.token) throw new Error("User not found.");
-      const token = data.token;
+      // console.log(data);
+      if (!res.ok || !data?.accessToken) throw new Error("User not found.");
+      const token = data.accessToken;
       const date = new Date().getTime() + 1000 * 60 * EXPIRATION_MINS; //MS * SECS * MINS (mins expiration time)
       const localData = { token, created_at: date };
       localStorage.setItem("demo-auth-token", JSON.stringify(localData));
